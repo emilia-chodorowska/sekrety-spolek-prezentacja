@@ -1,0 +1,3439 @@
+<!DOCTYPE html>
+<!--
+  PREZENTACJA — Lekcja 01: Sekrety Spółek — Kompletny kurs
+  Motyw: doTERRA (sage + gold + purple)
+  reveal.js 5.1.0 | 1920x1080 | bez grafik, bez logo
+-->
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekrety Spółek — Kompletny kurs — Sekrety Spółek</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+  <style>
+    :root {
+      --primary: #7BA07E;
+      --primary-soft: #D4E6D5;
+      --primary-dark: #5B7F5E;
+      --secondary: #D4A843;
+      --secondary-soft: #FEF9E7;
+      --accent: #7E6BAD;
+      --accent-soft: #EDE8F5;
+      --text: #1E293B;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --bg: #FFFFFF;
+      --bg-soft: #F8FAFC;
+      --border: #E2E8F0;
+    }
+
+    .reveal {
+      font-size: 42px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 1.8em 2.5em 1.5em;
+      box-sizing: border-box;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start;
+      justify-content: center !important;
+    }
+
+    /* === TITLE & SECTION slides === */
+    .reveal .slides section.slide-title,
+    .reveal .slides section.slide-section {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* === TYPOGRAPHY === */
+    .reveal h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin: 0 0 0.3em 0;
+      line-height: 1.15;
+    }
+
+    .reveal h2 {
+      font-size: 1.8em;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin: 0 0 0.2em 0;
+      line-height: 1.2;
+    }
+
+    .reveal h3 {
+      font-size: 0.9em;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 0.5em 0;
+      line-height: 1.3;
+    }
+
+    .reveal p, .reveal .body-text {
+      font-size: 0.82em;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 0.6em 0;
+    }
+
+    .reveal li {
+      font-size: 0.75em;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 0.3em;
+    }
+
+    .reveal ul, .reveal ol {
+      margin: 0.3em 0;
+      padding-left: 1.2em;
+    }
+
+    /* === PILL === */
+    .pill {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.55em;
+      font-weight: 600;
+      padding: 0.35em 1em;
+      border-radius: 100px;
+      margin-bottom: 0.8em;
+      letter-spacing: 0.01em;
+    }
+
+    .slide-title .pill {
+      font-size: 0.62em;
+      margin-bottom: 1em;
+    }
+
+    /* === BYLINE === */
+    .byline {
+      font-size: 0.65em;
+      color: var(--text-muted);
+      margin-top: 0.5em;
+      font-weight: 400;
+    }
+
+    /* === SUB (subtitle under h2) === */
+    .sub {
+      font-size: 0.75em;
+      color: var(--text-muted);
+      margin-top: -0.3em;
+      margin-bottom: 0.8em;
+      font-weight: 400;
+    }
+
+    /* === CARDS === */
+    .cards-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2em;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.2em;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .cards-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.2em;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9em 1em;
+    }
+
+    .card-soft {
+      background: var(--primary-soft);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 0.9em 1em;
+    }
+
+    .card-secondary {
+      background: var(--secondary-soft);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 0.9em 1em;
+    }
+
+    .card-accent {
+      background: var(--accent-soft);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 0.9em 1em;
+    }
+
+    .card h3 {
+      margin-bottom: 0.4em;
+    }
+
+    .card p, .card li {
+      font-size: 0.7em;
+    }
+
+    /* === TABLE === */
+    .reveal table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.7em;
+      border-radius: 12px;
+      overflow: hidden;
+      border: none;
+      margin-top: 0.5em;
+    }
+
+    .reveal table th {
+      background: var(--bg-soft);
+      font-weight: 600;
+      color: var(--text);
+      padding: 14px 20px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .reveal table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .reveal table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .reveal table tbody tr:hover {
+      background: var(--bg-soft);
+    }
+
+    /* === ACCENT BOX === */
+    .accent-box {
+      background: var(--primary-soft);
+      border-radius: 12px;
+      padding: 0.7em 1.1em;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 0.5em;
+    }
+
+    .accent-box p {
+      font-size: 0.7em;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .accent-box-secondary {
+      background: var(--secondary-soft);
+      border-radius: 12px;
+      padding: 0.7em 1.1em;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 0.5em;
+    }
+
+    .accent-box-secondary p {
+      font-size: 0.7em;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .accent-box-accent {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 0.7em 1.1em;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 0.5em;
+    }
+
+    .accent-box-accent p {
+      font-size: 0.7em;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* === CHECKLIST === */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0.5em 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 1.8em;
+      margin-bottom: 0.5em;
+      font-size: 0.75em;
+    }
+
+    .checklist li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    /* === STEPS === */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+      margin: 0.5em 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.5em;
+      margin-bottom: 0.7em;
+      font-size: 0.75em;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -0.1em;
+      width: 1.6em;
+      height: 1.6em;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9em;
+    }
+
+    /* === STATS === */
+    .stats {
+      display: flex;
+      gap: 2em;
+      margin-top: 0.5em;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .stat-number {
+      font-size: 2.4em;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1;
+      margin-bottom: 0.2em;
+    }
+
+    .stat-label {
+      font-size: 0.65em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* === HIGHLIGHT TEXT === */
+    .highlight {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .highlight-accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* === BG VARIANTS === */
+    .bg-soft {
+      background: var(--bg-soft) !important;
+    }
+
+    /* === CONTENT WRAPPER (flex-grow to fill space) === */
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* === SLIDE NUMBER === */
+    .reveal .slide-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* === DEBUG MODE === */
+    body.debug-mode .reveal .slides section {
+      outline: 2px dashed red;
+    }
+
+    body.debug-mode .pill,
+    body.debug-mode .card,
+    body.debug-mode .card-soft,
+    body.debug-mode .card-secondary,
+    body.debug-mode .card-accent,
+    body.debug-mode .accent-box,
+    body.debug-mode .accent-box-secondary,
+    body.debug-mode .accent-box-accent,
+    body.debug-mode table {
+      outline: 1px dashed rgba(255, 0, 0, 0.5);
+    }
+
+    /* === SPLIT VIEW === */
+    .reveal .slides section.slide-split {
+      padding: 0;
+      flex-direction: row !important; justify-content: flex-start !important; align-items: stretch !important;
+    }
+
+    .split-text {
+      width: 60%;
+      padding: 1.5em 1.5em 1.5em 2.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      align-items: flex-start;
+    }
+
+    .split-media {
+      width: 40%;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+      box-sizing: border-box;
+    }
+
+    .slide-split-reverse .split-text {
+      padding: 1.5em 2.5em 1.5em 1.5em;
+      order: 2;
+    }
+
+    .slide-split-reverse .split-media {
+      order: 1;
+    }
+
+    /* === QUOTE (in split media panel) === */
+    .quote-block {
+      text-align: center;
+      padding: 1.5em;
+    }
+
+    .quote-text {
+      font-size: 0.85em;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 0.8em;
+    }
+
+    .quote-author {
+      font-size: 0.62em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* === CODE/EXAMPLE BOX === */
+    .example-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1em 1.3em;
+      font-family: 'Inter', monospace;
+      font-size: 0.65em;
+      color: var(--text);
+      line-height: 1.7;
+      white-space: pre-line;
+      margin-top: 0.5em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* === VS COMPARISON === */
+    .vs-container {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1em;
+      align-items: stretch;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .vs-divider {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ==================== MASTER TITLE ==================== -->
+      <section class="slide-title">
+        <div class="pill">Kompletny kurs</div>
+        <h1>Sekrety Spółek</h1>
+        <div class="byline">Bartosz Szaleniec, doradca podatkowy · 10 lekcji</div>
+      </section>
+
+      <!-- ========== 01-podwojne-opodatkowanie-to-mit ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Podwójne opodatkowanie<br>to MIT</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Podwójne opodatkowanie ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Podwójne opodatkowanie</div>
+        <h2>Czym jest podwójne opodatkowanie?</h2>
+        <p class="sub">I dlaczego to nie musi być Twój problem</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: ACCENT BOX — Kluczowy fakt ==================== -->
+      <section>
+        <div class="pill">1 · Podwójne opodatkowanie</div>
+        <h2>Kluczowy fakt</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p><strong>Podwójne opodatkowanie</strong> w spółce z o.o. (CIT + PIT) występuje <span class="highlight-accent">WYŁĄCZNIE</span> przy wypłacie <strong>dywidendy</strong>.</p>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p>Wszystkie inne metody transferu środków to <span class="highlight">koszt uzyskania przychodu</span> spółki — obniżają CIT i są opodatkowane <strong>tylko raz</strong>.</p>
+          </div>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Wniosek:</strong> Dywidenda = ostateczność. Najpierw wyczerp wszystkie inne opcje.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: VS — Koszt spółki vs Dywidenda ==================== -->
+      <section>
+        <div class="pill">1 · Podwójne opodatkowanie</div>
+        <h2>Koszt spółki vs dywidenda</h2>
+        <div class="content">
+          <div class="vs-container">
+            <div class="card-soft">
+              <h3>Metody 1–7: Koszt spółki</h3>
+              <ul>
+                <li>Spółka płaci za usługę/pracę/najem</li>
+                <li>To jej <strong>koszt</strong> → obniża CIT</li>
+                <li>Osoba fizyczna płaci <strong>swój</strong> podatek</li>
+                <li><span class="highlight">Jedno opodatkowanie</span></li>
+              </ul>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="card-accent">
+              <h3>Dywidenda</h3>
+              <ul>
+                <li>Spółka najpierw płaci <strong>CIT</strong> od zysku</li>
+                <li>Z zysku <strong>po opodatkowaniu</strong> wypłaca dywidendę</li>
+                <li>Wspólnik płaci jeszcze <strong>PIT 19%</strong></li>
+                <li><span class="highlight-accent">Dwa opodatkowania</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: SPLIT — Jak działa koszt spółki ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">1 · Podwójne opodatkowanie</div>
+          <h2>Jak to działa w praktyce?</h2>
+          <ol class="steps">
+            <li>Spółka <strong>zatrudnia/wynajmuje</strong> — to realna transakcja</li>
+            <li>Wypłata = <strong>koszt uzyskania przychodu</strong> spółki</li>
+            <li>Spółka płaci <strong>niższy CIT</strong> (mniejsza podstawa)</li>
+            <li>Osoba fizyczna płaci <strong>swój PIT/ryczałt</strong></li>
+            <li>Efekt: <span class="highlight">jedno opodatkowanie</span> zamiast dwóch</li>
+          </ol>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Każda z metod 1–7 to realna transakcja między spółką a osobą fizyczną."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: SECTION — Ranking metod ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Ranking metod</div>
+        <h2>Ranking metod wypłaty</h2>
+        <p class="sub">Od najtańszej do najdroższej</p>
+      </section>
+
+      <!-- ==================== SLAJD 6: TABLE — Ranking metod ==================== -->
+      <section>
+        <div class="pill">2 · Ranking metod</div>
+        <h2>Zestawienie wszystkich metod</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Metoda</th>
+                <th>Efektywna stawka</th>
+                <th>ZUS</th>
+                <th>Limit roczny</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Student &lt;26 na zleceniu</td>
+                <td><span class="highlight"><strong>0%</strong></span></td>
+                <td>Nie</td>
+                <td>~115 tys. zł</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Senior / 4+ dzieci na etacie</td>
+                <td><span class="highlight"><strong>0%</strong></span></td>
+                <td>Tak</td>
+                <td>~115 tys. zł</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Umowa o dzieło + prawa autorskie</td>
+                <td><strong>~4,5–6%</strong></td>
+                <td>Nie</td>
+                <td>Brak (ale ryzyko)</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Wynajem nieruchomości/ruchomości</td>
+                <td><strong>8,5%</strong></td>
+                <td>Nie</td>
+                <td>100 tys. zł</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Fakturowanie z JDG (ryczałt)</td>
+                <td><strong>3–8,5%</strong> + ZUS</td>
+                <td>Tak</td>
+                <td>2 mln EUR</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Wynagrodzenie zarządu</td>
+                <td><strong>12–32%</strong> + 9% zdr.</td>
+                <td>Nie</td>
+                <td>~120 tys. zł</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Wynagrodzenie prokurenta</td>
+                <td><strong>12–32%</strong> + 9% zdr.</td>
+                <td>Nie</td>
+                <td>~120 tys. zł</td>
+              </tr>
+              <tr style="background: var(--accent-soft);">
+                <td>8</td>
+                <td><span class="highlight-accent">Dywidenda</span></td>
+                <td><span class="highlight-accent"><strong>26–34%</strong></span></td>
+                <td>Nie</td>
+                <td>Z zysku spółki</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: CHECKLIST — Metody 1-7 = koszt ==================== -->
+      <section>
+        <div class="pill">2 · Ranking metod</div>
+        <h2>Wspólna cecha metod 1–7</h2>
+        <div class="content">
+          <div class="accent-box-secondary">
+            <p><strong>Wszystkie metody 1–7 są kosztem spółki</strong> — obniżają CIT. Dywidenda — nie.</p>
+          </div>
+          <ul class="checklist" style="margin-top: 1em;">
+            <li>Student na zleceniu — <span class="highlight">koszt spółki</span></li>
+            <li>Senior / 4+ dzieci — <span class="highlight">koszt spółki</span></li>
+            <li>Umowa o dzieło — <span class="highlight">koszt spółki</span></li>
+            <li>Wynajem nieruchomości i ruchomości — <span class="highlight">koszt spółki</span></li>
+            <li>Fakturowanie z JDG — <span class="highlight">koszt spółki</span></li>
+            <li>Wynagrodzenie zarządu / prokurenta — <span class="highlight">koszt spółki</span></li>
+            <li>Dywidenda — <span class="highlight-accent">NIE jest kosztem spółki</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: SECTION — Łączenie metod ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Łączenie metod</div>
+        <h2>Siła łączenia metod</h2>
+        <p class="sub">Nie musisz wybierać jednej — użyj kilku naraz</p>
+      </section>
+
+      <!-- ==================== SLAJD 9: CENTER — Kluczowa zasada ==================== -->
+      <section>
+        <div class="pill">3 · Łączenie metod</div>
+        <h2>Kluczowa zasada optymalizacji</h2>
+        <div class="content" style="justify-content: center; align-items: center; text-align: center;">
+          <div class="accent-box-secondary" style="max-width: 80%; margin: 0 auto;">
+            <p style="font-size: 0.85em; font-weight: 600;"><span class="highlight">Łącz wiele metod jednocześnie.</span></p>
+            <p style="margin-top: 0.5em;">Nie musisz wybierać jednej — możesz korzystać z kilku naraz,<br>rozkładając pieniądze na różne strumienie.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: TABLE — Przykład 10 000 zł/mies. ==================== -->
+      <section>
+        <div class="pill">3 · Łączenie metod</div>
+        <h2>Przykład: 10 000 zł/mies.</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>Metoda</th>
+                <th>Kwota</th>
+                <th>Podatek</th>
+                <th>Stawka</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wynajem biura</td>
+                <td>2 000 zł</td>
+                <td>170 zł</td>
+                <td>8,5%</td>
+              </tr>
+              <tr>
+                <td>Wynajem ruchomości</td>
+                <td>2 000 zł</td>
+                <td>170 zł</td>
+                <td>8,5%</td>
+              </tr>
+              <tr>
+                <td>Umowa o dzieło</td>
+                <td>2 000 zł</td>
+                <td>120 zł</td>
+                <td>6%</td>
+              </tr>
+              <tr>
+                <td>Zlecenie (PIT dla młodych)</td>
+                <td>3 000 zł</td>
+                <td>0 zł</td>
+                <td><span class="highlight">0%</span></td>
+              </tr>
+              <tr>
+                <td>Zostaje w spółce</td>
+                <td>1 000 zł</td>
+                <td>90 zł</td>
+                <td>9%</td>
+              </tr>
+              <tr style="background: var(--primary-soft); font-weight: 600;">
+                <td><strong>RAZEM</strong></td>
+                <td><strong>10 000 zł</strong></td>
+                <td><strong>550 zł</strong></td>
+                <td><span class="highlight"><strong>5,5%</strong></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: STATS — Efekt ==================== -->
+      <section>
+        <div class="pill">3 · Łączenie metod</div>
+        <h2>Efekt łączenia metod</h2>
+        <div class="content" style="justify-content: center;">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">5,5%</div>
+              <div class="stat-label">Efektywna stawka<br>przy łączeniu metod</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" style="color: var(--accent);">26–34%</div>
+              <div class="stat-label">Stawka przy samej<br>dywidendzie</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">550 zł</div>
+              <div class="stat-label">Podatek miesięcznie<br>od 10 000 zł</div>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 1.5em; text-align: center;">
+            <p><strong>Oszczędność:</strong> zamiast ~3 000 zł podatku (przy dywidendzie) płacisz <span class="highlight">550 zł</span> — prawie <span class="highlight">5x mniej</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: SECTION — Podsumowanie ==================== -->
+      <section class="slide-section">
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Podsumowanie</h2>
+        <p class="sub">Co zabrać z tej lekcji?</p>
+      </section>
+
+      <!-- ==================== SLAJD 13: CARDS-3 — Trzy wnioski ==================== -->
+      <section>
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Trzy kluczowe wnioski</h2>
+        <div class="content">
+          <div class="cards-3">
+            <div class="card-soft">
+              <h3>Podwójne opodatkowanie = dywidenda</h3>
+              <p>Występuje <strong>tylko</strong> przy wypłacie dywidendy. Wszystkie inne metody — jedno opodatkowanie.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>7 metod tańszych od dywidendy</h3>
+              <p>Od <span class="highlight">0%</span> (student, senior) do <span class="highlight">~12–32%</span> (zarząd). Każda lepsza niż 26–34%.</p>
+            </div>
+            <div class="card-accent">
+              <h3>Łącz metody</h3>
+              <p>Używając kilku metod naraz można osiągnąć efektywną stawkę nawet <span class="highlight-accent">5,5%</span>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: CHECKLIST — Co dalej ==================== -->
+      <section>
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Co dalej?</h2>
+        <p class="sub">W kolejnych lekcjach omówimy każdą metodę szczegółowo</p>
+        <div class="content">
+          <ul class="checklist">
+            <li>Lekcja 2: Wynagrodzenie zarządu z powołania</li>
+            <li>Lekcja 3: Wynajem nieruchomości i ruchomości spółce</li>
+            <li>Lekcja 4: Umowa o dzieło z przeniesieniem praw autorskich</li>
+            <li>Lekcja 5: Fakturowanie z JDG na ryczałcie</li>
+            <li>Lekcja 6: Zatrudnienie, prokurent, dywidenda</li>
+            <li>Lekcja 7: ZUS, VAT, samochód w spółce</li>
+          </ul>
+          <div class="accent-box-secondary" style="margin-top: 1em;">
+            <p>Każda lekcja zawiera <strong>konkretne stawki, przykłady liczbowe, warunki i pułapki</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 02-wynagrodzenie-zarzadu ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Wynagrodzenie członka zarządu<br>z powołania</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Jak to działa ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Jak to działa</div>
+        <h2>Mechanizm wynagrodzenia z powołania</h2>
+        <p class="sub">Najprostsza forma wyciągania pieniędzy ze spółki</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Na czym polega — cards-2 ==================== -->
+      <section>
+        <div class="pill">1 · Jak to działa</div>
+        <h2>Na czym polega</h2>
+        <div class="content">
+          <p>Zgromadzenie wspólników podejmuje <span class="highlight">uchwałę</span> przyznającą wynagrodzenie członkowi zarządu. Nie jest potrzebna żadna umowa — wynagrodzenie wynika z samego faktu pełnienia funkcji.</p>
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Podstawa prawna</h3>
+              <p>Uchwała zgromadzenia wspólników — jedyny wymagany dokument</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Bez umowy</h3>
+              <p>Brak konieczności umowy cywilnoprawnej — wystarczy sam akt powołania + uchwała o wynagrodzeniu</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Podatki i składki — tabela ==================== -->
+      <section>
+        <div class="pill">1 · Jak to działa</div>
+        <h2>Podatki i składki</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Składnik</th><th>Stawka / kwota</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kwota wolna od podatku</td><td><span class="highlight">30 000 zł/rok</span> = 0% PIT</td></tr>
+              <tr><td>I próg podatkowy (30 001–120 000 zł)</td><td><strong>12% PIT</strong></td></tr>
+              <tr><td>II próg podatkowy (powyżej 120 000 zł)</td><td><span class="highlight-accent">32% PIT</span></td></tr>
+              <tr><td>Składka zdrowotna</td><td><strong>9%</strong> od kwoty brutto</td></tr>
+              <tr><td>Składki społeczne ZUS</td><td><span class="highlight">BRAK</span></td></tr>
+              <tr><td>Koszty uzyskania przychodu</td><td>250 zł/mies. (3 000 zł/rok) — zryczałtowane</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: SECTION — Ile zostaje ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Ile zostaje w kieszeni</div>
+        <h2>Efektywne stawki podatkowe</h2>
+        <p class="sub">Ile realnie zapłacisz przy różnych kwotach</p>
+      </section>
+
+      <!-- ==================== SLAJD 5: Tabela efektywnych stawek ==================== -->
+      <section>
+        <div class="pill">2 · Ile zostaje w kieszeni</div>
+        <h2>Ile realnie zostaje?</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Wynagrodzenie roczne</th><th>PIT</th><th>Zdrowotna 9%</th><th>Łącznie daniny</th><th>Efektywna stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>30 000 zł</td><td>0 zł</td><td>2 700 zł</td><td>2 700 zł</td><td><span class="highlight">9%</span></td></tr>
+              <tr><td>60 000 zł</td><td>3 600 zł</td><td>5 400 zł</td><td>9 000 zł</td><td><span class="highlight">15%</span></td></tr>
+              <tr><td>120 000 zł</td><td>10 800 zł</td><td>10 800 zł</td><td>21 600 zł</td><td><strong>18%</strong></td></tr>
+              <tr><td>200 000 zł</td><td>36 400 zł</td><td>18 000 zł</td><td>54 400 zł</td><td><span class="highlight-accent">27,2%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: Wniosek — stats + accent-box ==================== -->
+      <section>
+        <div class="pill">2 · Ile zostaje w kieszeni</div>
+        <h2>Kluczowe liczby</h2>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">0%</div>
+              <div class="stat-label">Składki ZUS</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">9%</div>
+              <div class="stat-label">Efektywna stawka<br>przy 30 tys. zł/rok</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">120 tys.</div>
+              <div class="stat-label">Opłacalny pułap<br>roczny (zł)</div>
+            </div>
+          </div>
+          <div class="accent-box-secondary">
+            <p><strong>Wniosek:</strong> Wynagrodzenie z powołania jest opłacalne do <span class="highlight">~120 tys. zł/rok</span>. Powyżej tej kwoty wchodzi II próg (32% PIT) — lepiej przejść na inne metody (JDG, umowa o dzieło).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: SECTION — Elastyczność ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Elastyczność</div>
+        <h2>Główna zaleta tej metody</h2>
+        <p class="sub">Najbardziej elastyczna forma wynagradzania</p>
+      </section>
+
+      <!-- ==================== SLAJD 8: Elastyczność — checklist ==================== -->
+      <section>
+        <div class="pill">3 · Elastyczność</div>
+        <h2>Dlaczego to takie elastyczne?</h2>
+        <div class="content">
+          <ul class="checklist">
+            <li>Wypłata <span class="highlight">ad hoc</span> — raz 5 tys., raz 15 tys., raz nic</li>
+            <li>Można uzależnić od wyników spółki (np. X% zysku kwartalnego)</li>
+            <li>Łączenie: <strong>stała baza</strong> (np. 5 000 zł/mies.) + <strong>premia roczna</strong></li>
+            <li>Można <span class="highlight">zawiesić</span> w dowolnym momencie (nieodpłatne pełnienie funkcji)</li>
+            <li>Zmiana = <strong>nowa uchwała</strong> zgromadzenia wspólników</li>
+            <li>Wypłata możliwa <span class="highlight-accent">nawet gdy spółka nie ma dochodu</span> (generuje stratę podatkową)</li>
+            <li>Brak środków? Można uchylić lub zmniejszyć wynagrodzenie dodatkową uchwałą</li>
+            <li>Organy podatkowe <strong>nie badają rynkowości</strong> tak rygorystycznie jak przy transakcjach</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: NFZ — cards-2 ==================== -->
+      <section>
+        <div class="pill">3 · Elastyczność</div>
+        <h2>NFZ — dwie opcje ubezpieczenia</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Opcja 1: Doubezpieczenie przez rodzinę</h3>
+              <p>Małżonek lub rodzic na etacie zgłasza Cię jako <strong>członka rodziny</strong> do NFZ.</p>
+              <p>Koszt: <span class="highlight">0 zł</span></p>
+            </div>
+            <div class="card-accent">
+              <h3>Opcja 2: Minimalne wynagrodzenie z powołania</h3>
+              <p>Ustal wynagrodzenie <strong>1 000 zł/mies.</strong> — składka zdrowotna wyniesie tylko <span class="highlight-accent">90 zł/mies.</span></p>
+              <p>Najtańsze legalne ubezpieczenie zdrowotne w Polsce.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: SECTION — Formalności i ryzyka ==================== -->
+      <section class="slide-section">
+        <div class="pill">4 · Formalności i ryzyka</div>
+        <h2>Co trzeba zrobić i na co uważać</h2>
+        <p class="sub">Minimum biurokracji, ale kilka pułapek</p>
+      </section>
+
+      <!-- ==================== SLAJD 11: Formalności — steps ==================== -->
+      <section>
+        <div class="pill">4 · Formalności i ryzyka</div>
+        <h2>Formalności — 3 kroki</h2>
+        <div class="content">
+          <ol class="steps">
+            <li><strong>Uchwała zgromadzenia wspólników</strong> — przyznanie wynagrodzenia członkowi zarządu (osobna na każdy miesiąc z inną kwotą lub jedna z kwotą stałą)</li>
+            <li><strong>Spółka jako płatnik</strong> — spółka odprowadza PIT i składkę zdrowotną za członka zarządu (tak jak za pracownika)</li>
+            <li><strong>Wypłata</strong> — przelew na konto członka zarządu, bez dodatkowych umów cywilnoprawnych</li>
+          </ol>
+          <div class="accent-box">
+            <p><strong>To wszystko.</strong> Nie potrzebujesz umowy o pracę, zlecenia ani żadnego innego dokumentu — wystarczy uchwała.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: Wady — split ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">4 · Formalności i ryzyka</div>
+          <h2>Wady i ostrzeżenia</h2>
+          <ul class="checklist">
+            <li>Dotyczy <strong>TYLKO</strong> członków zarządu (nie zwykłych wspólników)</li>
+            <li><strong>Nie daje prawa do emerytury</strong> — brak okresów składkowych</li>
+            <li>Powyżej 120 tys. zł/rok → stawka <span class="highlight-accent">32% PIT</span></li>
+            <li>Członek zarządu ponosi <strong>odpowiedzialność</strong> za zobowiązania spółki (art. 299 KSH)</li>
+            <li><strong>Kumuluje się</strong> z innymi źródłami na skali podatkowej (etat, zlecenie, dzieło)</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Powyżej 120 tys. zł rocznie — przejdź na inne metody. JDG lub umowa o dzieło będą korzystniejsze."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Dla SaaS — cards-3 + accent-box ==================== -->
+      <section>
+        <div class="pill">4 · Formalności i ryzyka</div>
+        <h2>Rekomendacja dla SaaS</h2>
+        <div class="content">
+          <p>Idealna metoda na start działalności SaaS w formie spółki z o.o.</p>
+          <div class="cards-3">
+            <div class="card-secondary">
+              <h3>Baza</h3>
+              <p>Ustal wynagrodzenie z powołania na <span class="highlight">5–10 tys. zł/mies.</span></p>
+            </div>
+            <div class="card-soft">
+              <h3>Korzyści</h3>
+              <p>Masz NFZ, masz dochód osobisty, spółka ma koszt uzyskania przychodu</p>
+            </div>
+            <div class="card-accent">
+              <h3>Skalowanie</h3>
+              <p>Gdy SaaS zacznie zarabiać więcej → dodawaj kolejne metody (JDG, dzieło, dywidenda)</p>
+            </div>
+          </div>
+          <div class="accent-box-accent">
+            <p><strong>Strategia:</strong> Zacznij od wynagrodzenia z powołania jako fundament. To daje Ci <span class="highlight">NFZ</span>, <span class="highlight">dochód</span> i <span class="highlight">koszt w spółce</span> przy minimalnej biurokracji. Kolejne metody dostawiasz w miarę wzrostu przychodów.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 03-wynajem-spolce ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Wynajem spółce — nieruchomości i ruchomości</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Idea ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Idea</div>
+        <h2>Na czym polega wynajem spółce?</h2>
+        <p class="sub">Prosty mechanizm wyciągania pieniędzy — ryczałt 8,5%, zero ZUS</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Jak to działa ==================== -->
+      <section>
+        <div class="pill">1 · Idea</div>
+        <h2>Jak to działa?</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p>Wynajmujesz spółce rzeczy ze swojego <strong>majątku prywatnego</strong> — mieszkanie jako biuro, laptop, telefon, samochód. Spółka płaci czynsz, Ty rozliczasz się <span class="highlight">ryczałtem 8,5%</span>.</p>
+          </div>
+          <div class="stats" style="margin-top: 1.2em;">
+            <div class="stat">
+              <div class="stat-number">8,5%</div>
+              <div class="stat-label">Ryczałt od przychodu</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0 zł</div>
+              <div class="stat-label">Składki ZUS</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0 zł</div>
+              <div class="stat-label">Składka zdrowotna</div>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 1em;">
+            <p>Najem prywatny <strong>nie jest tytułem do oskładkowania</strong> — dlatego zero ZUS i zero zdrowotnej.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Podatki i składki ==================== -->
+      <section>
+        <div class="pill">1 · Idea</div>
+        <h2>Podatki i składki</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Składnik</th><th>Stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ryczałt do 100 000 zł czynszu/rok</td><td><span class="highlight">8,5%</span> od przychodu</td></tr>
+              <tr><td>Ryczałt powyżej 100 000 zł/rok</td><td><span class="highlight">12,5%</span> od nadwyżki</td></tr>
+              <tr><td>Składki społeczne ZUS</td><td><strong>BRAK</strong></td></tr>
+              <tr><td>Składka zdrowotna</td><td><strong>BRAK</strong></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 1em;">
+            <p>Dla porównania: wynagrodzenie zarządu to ~36% obciążeń (PIT + zdrowotna). Najem prywatny to zaledwie <span class="highlight">8,5%</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: SECTION — Co wynajmujesz ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Co wynajmujesz</div>
+        <h2>Nieruchomości i ruchomości</h2>
+        <p class="sub">Co ze swojego majątku prywatnego możesz wynająć spółce?</p>
+      </section>
+
+      <!-- ==================== SLAJD 5: Nieruchomości vs ruchomości ==================== -->
+      <section>
+        <div class="pill">2 · Co wynajmujesz</div>
+        <h2>Co można wynajmować?</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Nieruchomości</h3>
+              <ul>
+                <li>Mieszkanie / pokój jako biuro spółki</li>
+                <li>Lokal użytkowy, hala, garaż</li>
+                <li>Grunt (np. parking)</li>
+              </ul>
+            </div>
+            <div class="card-secondary">
+              <h3>Ruchomości</h3>
+              <ul>
+                <li>Laptop, komputer stacjonarny, monitor</li>
+                <li>Telefon, tablet, aparat, kamera</li>
+                <li>Samochód</li>
+                <li>Maszyny, meble biurowe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: Przykład liczbowy ==================== -->
+      <section>
+        <div class="pill">2 · Co wynajmujesz</div>
+        <h2>Przykład: biuro + sprzęt</h2>
+        <div class="content">
+          <div class="example-box">Czynsz za pokój jako biuro:    1 500 zł/mies.
+Czynsz za laptop + monitor:      500 zł/mies.
+Czynsz za telefon:                200 zł/mies.
+───────────────────────────────────────
+RAZEM miesięcznie:              2 200 zł
+RAZEM rocznie:                 26 400 zł
+
+Podatek ryczałt 8,5%:          2 244 zł/rok
+ZUS:                                0 zł
+Zdrowotna:                          0 zł
+───────────────────────────────────────
+Do kieszeni:                  24 156 zł/rok
+Efektywna stawka:                 8,5%</div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: SECTION — Limity i zasady ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Limity i zasady</div>
+        <h2>O czym musisz pamiętać</h2>
+        <p class="sub">Limit przychodów, rynkowy czynsz, przepisy o ukrytej dywidendzie</p>
+      </section>
+
+      <!-- ==================== SLAJD 8: Limit 100 tys. ==================== -->
+      <section>
+        <div class="pill">3 · Limity i zasady</div>
+        <h2>Limit 100 000 zł — ważne!</h2>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">100 tys.</div>
+              <div class="stat-label">Globalny limit roczny</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">8,5%</div>
+              <div class="stat-label">Poniżej limitu</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">12,5%</div>
+              <div class="stat-label">Powyżej limitu</div>
+            </div>
+          </div>
+          <table style="margin-top: 0.8em;">
+            <thead>
+              <tr><th>Przychód roczny</th><th>Obliczenie</th><th>Podatek</th><th>Efektywna stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>26 400 zł</td><td>26 400 × 8,5%</td><td><span class="highlight">2 244 zł</span></td><td>8,5%</td></tr>
+              <tr><td>100 000 zł</td><td>100 000 × 8,5%</td><td><span class="highlight">8 500 zł</span></td><td>8,5%</td></tr>
+              <tr><td>120 000 zł</td><td>100 000 × 8,5% + 20 000 × 12,5%</td><td><span class="highlight">11 000 zł</span></td><td>~9,2%</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.6em;">
+            <p>Limit jest <strong>globalny</strong> — ze WSZYSTKICH najmów łącznie (nieruchomości + ruchomości). Nadal <strong>bez ZUS</strong> i zdrowotnej.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: Czynsz rynkowy ==================== -->
+      <section>
+        <div class="pill">3 · Limity i zasady</div>
+        <h2>Czynsz musi być rynkowy</h2>
+        <div class="content">
+          <p>Sprawdź ile kosztuje wynajem podobnego sprzętu lub lokalu na rynku. Zawyżony czynsz zostanie zakwestionowany przez urząd skarbowy.</p>
+          <div class="cards-2">
+            <div class="card-accent">
+              <h3>Dobrze</h3>
+              <ul>
+                <li>Laptop warty 5 000 zł → czynsz <span class="highlight">200–500 zł/mies.</span></li>
+                <li>Pokój w mieszkaniu → czynsz na poziomie stawek rynkowych w danej lokalizacji</li>
+                <li>Samochód → porównanie z wypożyczalniami</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Źle</h3>
+              <ul>
+                <li>Laptop warty 5 000 zł → czynsz <span class="highlight-accent">5 000 zł/mies.</span> = zakwestionowane</li>
+                <li>Pokój 10 m² → czynsz jak za cały lokal biurowy</li>
+                <li>Stary sprzęt → czynsz jak za nowy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: Kluczowe zasady ==================== -->
+      <section>
+        <div class="pill">3 · Limity i zasady</div>
+        <h2>Kluczowe zasady</h2>
+        <div class="content">
+          <ul class="checklist">
+            <li>Wynajmowane rzeczy muszą być Twoją <strong>własnością prywatną</strong> (nie z JDG ani innej firmy)</li>
+            <li>Nieruchomość/ruchomość musi być <strong>związana z działalnością</strong> spółki</li>
+            <li>Czynsz musi odpowiadać <strong>stawkom rynkowym</strong></li>
+            <li>Limit 100 tys. zł jest <strong>globalny</strong> — łącznie ze wszystkich najmów</li>
+            <li>Powyżej limitu stawka rośnie do <strong>12,5%</strong>, ale nadal bez ZUS</li>
+            <li>Potrzebujesz <strong>umowy najmu</strong> między Tobą a spółką</li>
+          </ul>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Przepisy o „ukrytej dywidendzie"</strong> — miały wejść od 2023, ale zostały uchylone przed wejściem w życie. Aktualnie <span class="highlight">nie stanowią ryzyka</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: SECTION — Dla SaaS ==================== -->
+      <section class="slide-section">
+        <div class="pill">4 · Dla SaaS</div>
+        <h2>Wynajem w firmie SaaS</h2>
+        <p class="sub">Co konkretnie wynajmujesz, pracując zdalnie przy produkcie software'owym?</p>
+      </section>
+
+      <!-- ==================== SLAJD 12: Co wynajmujesz w SaaS ==================== -->
+      <section>
+        <div class="pill">4 · Dla SaaS</div>
+        <h2>Co wynajmujesz w SaaS</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Rzecz</th><th>Czynsz / mies.</th><th>Rocznie</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pokój jako biuro</td><td>1 000 – 2 000 zł</td><td>12 – 24 tys. zł</td></tr>
+              <tr><td>Laptop</td><td>200 – 500 zł</td><td>2,4 – 6 tys. zł</td></tr>
+              <tr><td>Monitor</td><td>100 – 200 zł</td><td>1,2 – 2,4 tys. zł</td></tr>
+              <tr><td>Telefon</td><td>100 – 200 zł</td><td>1,2 – 2,4 tys. zł</td></tr>
+              <tr><td><strong>Łącznie</strong></td><td><strong>1 400 – 2 900 zł</strong></td><td><strong>16,8 – 34,8 tys. zł</strong></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p>Stały strumień <span class="highlight">~2 000 zł/mies.</span> opodatkowany zaledwie 8,5% bez ZUS — realnie <strong>~1 830 zł netto</strong> do kieszeni każdego miesiąca.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Podsumowanie ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">Podsumowanie</div>
+          <h2>Wynajem spółce</h2>
+          <ol class="steps">
+            <li>Wynajmij spółce <strong>nieruchomości i ruchomości</strong> z majątku prywatnego</li>
+            <li>Rozliczaj się <strong>ryczałtem 8,5%</strong> (12,5% powyżej 100 tys. zł)</li>
+            <li>Nie płacisz <strong>ZUS ani zdrowotnej</strong></li>
+            <li>Ustal <strong>czynsz rynkowy</strong> — sprawdź stawki na rynku</li>
+            <li>Podpisz <strong>umowę najmu</strong> między sobą a spółką</li>
+          </ol>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Najem prywatny to jeden z najprostszych i najtańszych sposobów wyciągania pieniędzy ze spółki."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 04-umowa-o-dzielo ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Umowa o dzieło<br>z prawami autorskimi</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Dlaczego najlepsza ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Mechanizm</div>
+        <h2>Dlaczego najlepsza metoda dla SaaS</h2>
+        <p class="sub">50% koszty, zero ZUS — jak to działa i ile zaoszczędzisz</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Accent box — 50% koszty ==================== -->
+      <section>
+        <div class="pill">1 · Mechanizm</div>
+        <h2>50% koszty uzyskania przychodu</h2>
+        <div class="content">
+          <p>Tworzysz oprogramowanie i przenosisz <span class="highlight">prawa autorskie</span> na spółkę. Dzięki temu połowa Twojego wynagrodzenia to koszt uzyskania przychodu — podatek płacisz tylko od drugiej połowy.</p>
+          <div class="accent-box">
+            <p><strong>Mechanizm:</strong> Wynagrodzenie brutto <span class="highlight">240 000 zł</span> → 50% koszty = dochód tylko <span class="highlight">120 000 zł</span> → po kwocie wolnej podstawa opodatkowania to <span class="highlight">90 000 zł</span></p>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Kluczowe:</strong> Zero składek ZUS, zero składki zdrowotnej. Jedyny koszt to <span class="highlight">PIT 12%</span> od pomniejszonego dochodu.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Tabela — podatki i składki ==================== -->
+      <section>
+        <div class="pill">1 · Mechanizm</div>
+        <h2>Podatki i składki — przegląd</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Składnik</th><th>Stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>PIT (skala podatkowa)</td><td><span class="highlight">12% / 32%</span></td></tr>
+              <tr><td>Koszty uzyskania przychodu</td><td><strong>50%</strong> (przy przeniesieniu praw autorskich)</td></tr>
+              <tr><td>Dochód do opodatkowania</td><td><strong>połowa wynagrodzenia</strong></td></tr>
+              <tr><td>Kwota wolna od podatku</td><td>30 000 zł od dochodu</td></tr>
+              <tr><td>Składki społeczne ZUS</td><td><span class="highlight">BRAK</span></td></tr>
+              <tr><td>Składka zdrowotna</td><td><span class="highlight">BRAK</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: Cards — z prawami vs bez ==================== -->
+      <section>
+        <div class="pill">1 · Mechanizm</div>
+        <h2>Z prawami autorskimi vs bez</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Z prawami autorskimi</h3>
+              <p>Koszty uzyskania przychodu: <span class="highlight">50%</span></p>
+              <p>Efektywna stawka: <strong>0–9%</strong></p>
+              <p>Wymóg: dzieło musi mieć <strong>twórczy charakter</strong> i następuje przeniesienie praw autorskich na spółkę</p>
+              <p>Ryzyko: US może zakwestionować twórczość</p>
+            </div>
+            <div class="card-accent">
+              <h3>Bez praw autorskich</h3>
+              <p>Koszty uzyskania przychodu: <span class="highlight-accent">20%</span></p>
+              <p>Efektywna stawka: <strong>7–14%</strong></p>
+              <p>Wymóg: konkretny rezultat, ale <strong>nie musi być twórczy</strong></p>
+              <p>Zaleta: mniejsze ryzyko — US nie zakwestionuje twórczości</p>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>W obu wariantach:</strong> zero ZUS i zero składki zdrowotnej.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: SECTION — Ile zapłacisz ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Kalkulacja</div>
+        <h2>Ile realnie zapłacisz</h2>
+        <p class="sub">Efektywne stawki podatkowe dla różnych kwot wynagrodzenia</p>
+      </section>
+
+      <!-- ==================== SLAJD 6: Tabela efektywnych stawek ==================== -->
+      <section>
+        <div class="pill">2 · Kalkulacja</div>
+        <h2>Tabela efektywnych stawek</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Brutto / rok</th><th>Dochód (po 50%)</th><th>Podstawa</th><th>PIT</th><th>Efektywna stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>60 000 zł</strong></td><td>30 000 zł</td><td>0 zł</td><td><span class="highlight">0 zł</span></td><td><span class="highlight">0%</span></td></tr>
+              <tr><td><strong>120 000 zł</strong></td><td>60 000 zł</td><td>30 000 zł</td><td>3 600 zł</td><td><span class="highlight">3%</span></td></tr>
+              <tr><td><strong>240 000 zł</strong></td><td>120 000 zł</td><td>90 000 zł</td><td>10 800 zł</td><td><span class="highlight">4,5%</span></td></tr>
+              <tr><td><strong>400 000 zł</strong></td><td>200 000 zł</td><td>170 000 zł</td><td>36 400 zł</td><td><span class="highlight">9,1%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Do 60 tys. zł brutto rocznie → 0% podatku!</strong> Kwota wolna pokrywa cały dochód po odliczeniu 50% kosztów.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: Example box — 240 000 zł ==================== -->
+      <section>
+        <div class="pill">2 · Kalkulacja</div>
+        <h2>Przykład: 240 000 zł / rok</h2>
+        <div class="content">
+          <div class="example-box">Wynagrodzenie brutto:                    240 000 zł
+50% koszty uzyskania przychodu:         −120 000 zł
+Dochód:                                  120 000 zł
+Kwota wolna:                             −30 000 zł
+Podstawa opodatkowania:                   90 000 zł
+PIT 12%:                                  10 800 zł
+ZUS:                                           0 zł
+Zdrowotna:                                     0 zł
+───────────────────────────────────────────────────
+ŁĄCZNY PODATEK:                           10 800 zł
+Do kieszeni:                             229 200 zł
+Efektywna stawka:                            4,5%</div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: Stats — dzieło vs dywidenda ==================== -->
+      <section>
+        <div class="pill">2 · Kalkulacja</div>
+        <h2>Dzieło vs dywidenda — przy 240 000 zł</h2>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">4,5%</div>
+              <div class="stat-label">Umowa o dzieło<br>10 800 zł podatku</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" style="color: var(--accent);">26,3%</div>
+              <div class="stat-label">Dywidenda<br>~63 000 zł podatku</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">52 200 zł</div>
+              <div class="stat-label">Różnica<br>więcej w kieszeni</div>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 1.5em;">
+            <p><strong>Umowa o dzieło z prawami autorskimi</strong> to <span class="highlight">prawie 6x mniejszy podatek</span> niż wypłata tej samej kwoty jako dywidenda.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: SECTION — Warunki i ryzyka ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Warunki</div>
+        <h2>Warunki i ryzyka</h2>
+        <p class="sub">Co musi spełniać umowa, żeby urząd skarbowy jej nie zakwestionował</p>
+      </section>
+
+      <!-- ==================== SLAJD 10: Checklist — co się kwalifikuje ==================== -->
+      <section>
+        <div class="pill">3 · Warunki</div>
+        <h2>Co kwalifikuje się jako dzieło w SaaS</h2>
+        <div class="content">
+          <ul class="checklist">
+            <li><strong>Pisanie kodu</strong> — moduły oprogramowania, API, algorytmy</li>
+            <li><strong>Projektowanie UI/UX</strong> — makiety, projekty interfejsu</li>
+            <li><strong>Tworzenie grafiki</strong> — loga, ikony, ilustracje</li>
+            <li><strong>Dokumentacja techniczna</strong> — specyfikacje, instrukcje</li>
+            <li><strong>Materiały marketingowe</strong> — teksty na stronę, filmy, prezentacje</li>
+            <li><strong>Bazy danych</strong> — projektowanie struktury, modeli danych</li>
+          </ul>
+          <div class="accent-box-accent" style="margin-top: 0.5em;">
+            <p>Firma SaaS naturalnie generuje <span class="highlight-accent">mnóstwo dzieł z prawami autorskimi</span> — to główna przewaga tej metody dla branży IT.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: Cards 2x2 — na co uważać ==================== -->
+      <section>
+        <div class="pill">3 · Warunki</div>
+        <h2>Na co uważać</h2>
+        <div class="content">
+          <div class="cards-2x2">
+            <div class="card">
+              <h3>Namacalny rezultat</h3>
+              <p>&#10004; „Moduł płatności online w aplikacji X"<br>&#10004; „Projekt interfejsu dla modułu Y"<br>&#10008; „Obsługa klientów" — to staranność<br>&#10008; „Zarządzanie projektem" — brak rezultatu</p>
+            </div>
+            <div class="card">
+              <h3>Nie może być powtarzalne</h3>
+              <p>&#10004; „Stworzenie modułu raportowania" — jednorazowe<br>&#10008; „Comiesięczna konserwacja systemu" — to zlecenie/etat</p>
+            </div>
+            <div class="card-accent">
+              <h3>Ryzyko przekwalifikowania</h3>
+              <p>US może uznać dzieło za <strong>zlecenie</strong>. Konsekwencje: utrata 50% kosztów, naliczenie <span class="highlight-accent">ZUS + zdrowotnej</span> + kara</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Inny zakres niż zarząd</h3>
+              <p>Jeśli masz wynagrodzenie z powołania, umowa o dzieło musi dotyczyć <strong>innego zakresu</strong> niż obowiązki zarządu</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: Split — art. 210 KSH ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">3 · Warunki</div>
+          <h2>Art. 210 KSH — pełnomocnik</h2>
+          <p>Jeśli jesteś członkiem zarządu, <span class="highlight">nie możesz</span> podpisać umowy o dzieło sam ze sobą — byłbyś po obu stronach umowy.</p>
+          <ul>
+            <li>Potrzebny <strong>pełnomocnik</strong> powołany uchwałą zgromadzenia wspólników</li>
+            <li>Pełnomocnik podpisuje umowę <strong>w imieniu spółki</strong> z Tobą jako wykonawcą</li>
+            <li>Bez pełnomocnika umowa jest <strong>nieważna</strong></li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„W umowie między spółką a członkiem zarządu spółkę reprezentuje rada nadzorcza lub pełnomocnik powołany uchwałą zgromadzenia wspólników."</div>
+            <div class="quote-author">— Art. 210 § 1 KSH</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Steps — praktyczne wskazówki ==================== -->
+      <section>
+        <div class="pill">3 · Warunki</div>
+        <h2>Praktyczne wskazówki</h2>
+        <div class="content">
+          <ol class="steps">
+            <li><strong>Opisuj dzieło konkretnie</strong> — nie „programowanie", ale „stworzenie modułu X z funkcjami A, B, C"</li>
+            <li><strong>Dokumentuj rezultaty</strong> — protokoły odbioru, screenshoty, commit history w repozytorium</li>
+            <li><strong>Zmieniaj zakres</strong> — nie rób tego co miesiąc identycznie, każde dzieło powinno mieć inny opis</li>
+            <li><strong>Zachowaj proporcje</strong> — umowa o dzieło powinna dotyczyć innego zakresu niż obowiązki zarządu</li>
+            <li><strong>Powołaj pełnomocnika</strong> — uchwałą zgromadzenia wspólników, przed podpisaniem pierwszej umowy</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: Cards — zalety vs wady ==================== -->
+      <section>
+        <div class="pill">Podsumowanie</div>
+        <h2>Zalety vs wady</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Zalety</h3>
+              <ul>
+                <li>Efektywnie <span class="highlight">0–9% podatku</span></li>
+                <li><strong>Zero ZUS</strong>, zero zdrowotnej</li>
+                <li>Naturalne dla SaaS — kod, design, dokumentacja</li>
+                <li>Koszt spółki — <strong>obniża CIT</strong></li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>Wady i ryzyka</h3>
+              <ul>
+                <li>Ryzyko <span class="highlight-accent">przekwalifikowania</span> na zlecenie</li>
+                <li>Musi być <strong>namacalny rezultat</strong></li>
+                <li>Nie może być powtarzalne jak etat</li>
+                <li>Wymaga <strong>pełnomocnika</strong> (art. 210 KSH)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 05-fakturowanie-jdg ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Fakturowanie spółki z JDG (B2B)</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Na czym polega ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Na czym polega</div>
+        <h2>Dwie firmy, jeden właściciel</h2>
+        <p class="sub">Jak legalnie obniżyć podatek fakturując spółkę z własnej JDG</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: cards-2 — Spółka vs JDG ==================== -->
+      <section>
+        <div class="pill">1 · Na czym polega</div>
+        <h2>Dwie firmy jednocześnie</h2>
+        <div class="content">
+          <p>Prowadzisz <span class="highlight">dwa podmioty</span> — każdy z inną rolą podatkową.</p>
+          <div class="cards-2">
+            <div class="card">
+              <h3>Spółka z o.o.</h3>
+              <p>Działalność operacyjna: klienci, serwery, pracownicy, koszty marketingu. Faktura od JDG to <strong>koszt</strong> — obniża CIT.</p>
+            </div>
+            <div class="card-soft">
+              <h3>JDG (Twoja)</h3>
+              <p>Podwykonawca z wysoką marżą. Fakturuje spółkę za usługi. Płaci <span class="highlight">niski ryczałt</span> zamiast CIT + PIT od dywidendy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: table — Stawki ryczałtu ==================== -->
+      <section>
+        <div class="pill">1 · Na czym polega</div>
+        <h2>Stawki ryczałtu na JDG</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Rodzaj działalności</th><th>Stawka ryczałtu</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Handel</td><td><span class="highlight">3%</span></td></tr>
+              <tr><td>Produkcja, instalacje</td><td><span class="highlight">5,5%</span></td></tr>
+              <tr><td>Usługi administracyjne, pośrednictwo</td><td><span class="highlight">8,5%</span></td></tr>
+              <tr><td>Usługi IT (programowanie, montaż filmów)</td><td><span class="highlight">12%</span></td></tr>
+              <tr><td>Marketing, usługi finansowe</td><td><span class="highlight">15%</span></td></tr>
+              <tr><td>Podatek liniowy (alternatywa)</td><td>19%</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p>Limit ryczałtu: <span class="highlight">2 000 000 EUR</span> netto przychodu rocznie. Stawki IT zależą od PKD — warto ustalić z księgową.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: SECTION — Dlaczego się opłaca ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Dlaczego się opłaca</div>
+        <h2>Konkretne oszczędności</h2>
+        <p class="sub">Porównanie JDG na ryczałcie vs dywidenda ze spółki</p>
+      </section>
+
+      <!-- ==================== SLAJD 5: cards + stats — Przykład liczbowy ==================== -->
+      <section>
+        <div class="pill">2 · Dlaczego się opłaca</div>
+        <h2>Przykład: 300 000 zł przez JDG vs dywidendę</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>JDG na ryczałcie 8,5%</h3>
+              <p>Podatek: 300 000 × 8,5% = <strong>25 500 zł</strong>
+              ZUS (po uldze na start): ~5 000 zł
+              Składka zdrowotna: ~3 600 zł
+              <strong>Łącznie: ~34 100 zł</strong></p>
+            </div>
+            <div class="card-accent">
+              <h3>Dywidenda ze spółki</h3>
+              <p>CIT 9%: 27 000 zł
+              PIT 19% od 273 000 zł: <strong>51 870 zł</strong>
+              <strong>Łącznie: 78 870 zł</strong></p>
+            </div>
+          </div>
+          <div class="stats" style="margin-top: 1em;">
+            <div class="stat">
+              <div class="stat-number">~11,4%</div>
+              <div class="stat-label">Efektywna stawka — JDG</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">26,3%</div>
+              <div class="stat-label">Efektywna stawka — dywidenda</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">~44 770 zł</div>
+              <div class="stat-label">Roczna oszczędność</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: accent-box + checklist — Kiedy się opłaca ==================== -->
+      <section>
+        <div class="pill">2 · Dlaczego się opłaca</div>
+        <h2>Kiedy to się opłaca?</h2>
+        <div class="content">
+          <div class="accent-box-secondary">
+            <p><strong>Kluczowa zasada:</strong> Opłaca się, gdy transferujesz <span class="highlight">więcej niż ~120 000 zł/rok</span> — bo metody na skali PIT wchodzą w 32%. Im więcej fakturujesz, tym większa oszczędność.</p>
+          </div>
+          <ul class="checklist" style="margin-top: 0.8em;">
+            <li><strong>Brak limitu kwotowego</strong> — fakturuj setki tysięcy czy miliony</li>
+            <li>Opłacalne gdy oszczędności podatkowe <span class="highlight">przewyższają koszty</span> drugiej firmy</li>
+            <li>Koszty pozostają na spółce, JDG opodatkowuje <strong>czysty przychód</strong> ryczałtem</li>
+            <li>JDG wspólnika jest <span class="highlight-accent">podwykonawcą</span> — świadczy usługi o wysokiej marży</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: table — Koszty prowadzenia JDG ==================== -->
+      <section>
+        <div class="pill">2 · Dlaczego się opłaca</div>
+        <h2>Koszty prowadzenia JDG</h2>
+        <div class="content">
+          <p>Dodatkowe koszty, które trzeba uwzględnić w kalkulacji opłacalności.</p>
+          <table>
+            <thead>
+              <tr><th>Koszt</th><th>Kwota / miesiąc</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Księgowość</td><td><strong>200–500 zł</strong></td></tr>
+              <tr><td>ZUS społeczny (po uldze na start)</td><td>0 zł (6 mies.), potem mały ZUS (24 mies.)</td></tr>
+              <tr><td>Składka zdrowotna</td><td>Zależy od dochodu / formy ryczałtu</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>W praktyce:</strong> Przy fakturowaniu >150 000 zł/rok koszty JDG (kilkaset zł/mies.) to ułamek oszczędności podatkowych.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: SECTION — IP BOX i ostrzeżenia ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · IP BOX i ostrzeżenia</div>
+        <h2>Na co uważać</h2>
+        <p class="sub">Bonus dla programistów i kluczowe ryzyka podatkowe</p>
+      </section>
+
+      <!-- ==================== SLAJD 9: accent-box-accent + checklist — IP BOX ==================== -->
+      <section>
+        <div class="pill">3 · IP BOX i ostrzeżenia</div>
+        <h2>IP BOX — bonus dla programistów</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p>Przy fakturowaniu spółki z JDG w zakresie <span class="highlight-accent">praw autorskich do programu komputerowego</span> — możliwy IP BOX ze stawką <span class="highlight">5% PIT</span> zamiast 19% liniowego.</p>
+          </div>
+          <ul class="checklist" style="margin-top: 0.8em;">
+            <li>Stawka PIT: <span class="highlight">5%</span> — jedna z najniższych w polskim systemie</li>
+            <li>Wymaga odrębnej ewidencji czasu pracy nad kwalifikowanym IP</li>
+            <li>Dokumentowanie: kto, co, kiedy tworzył — raport miesięczny</li>
+            <li>Warto przeanalizować z <strong>doradcą podatkowym</strong> przed wdrożeniem</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: cards-2x2 — Kluczowe ostrzeżenia ==================== -->
+      <section>
+        <div class="pill">3 · IP BOX i ostrzeżenia</div>
+        <h2>Kluczowe ostrzeżenia</h2>
+        <div class="content">
+          <div class="cards-2x2">
+            <div class="card-secondary">
+              <h3>Usługi muszą być realne</h3>
+              <p>Faktury za "usługi doradcze" bez konkretów = ryzyko. Dokumentuj: raporty, efekty pracy, korespondencja.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Ceny rynkowe</h3>
+              <p>Organy podatkowe badają czy cena jest rynkowa. Nie fakturuj <span class="highlight">200 000 zł</span> za usługę wartą 20 000 zł.</p>
+            </div>
+            <div class="card-accent">
+              <h3>Usługi zarządcze ≠ ryczałt</h3>
+              <p>Usług zarządczych <strong>NIE można</strong> fakturować na ryczałcie (stanowisko KIS i WSA). Inne usługi — można.</p>
+            </div>
+            <div class="card-accent">
+              <h3>Art. 210 KSH</h3>
+              <p>Umowa JDG ze spółką musi być zawarta przez <span class="highlight-accent">pełnomocnika</span> (uchwała ZW). Nie podpisuj sam po obu stronach.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: SPLIT — VAT ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">3 · IP BOX i ostrzeżenia</div>
+          <h2>Próg VAT na JDG</h2>
+          <p>Po przekroczeniu progu przychodu na JDG musisz się zarejestrować jako podatnik VAT.</p>
+          <ul>
+            <li>Aktualny próg: <span class="highlight">200 000 zł</span> przychodu</li>
+            <li>Od 2026 roku: próg wzrasta do <span class="highlight">240 000 zł</span></li>
+            <li>Po przekroczeniu — obowiązek rejestracji VAT i wystawiania faktur z VAT</li>
+            <li>Planuj fakturowanie z uwzględnieniem tego progu</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">"Jeśli fakturujesz powyżej 200 tys. — VAT staje się obowiązkowy. Zaplanuj to z wyprzedzeniem."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: table — Ulgi na start ZUS ==================== -->
+      <section>
+        <div class="pill">3 · IP BOX i ostrzeżenia</div>
+        <h2>JDG — ulgi na start ZUS</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Okres</th><th>ZUS społeczny</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pierwsze 6 miesięcy</td><td><span class="highlight">0 zł</span></td><td>Ulga na start</td></tr>
+              <tr><td>Miesiące 7–30</td><td><span class="highlight">~400 zł/mies.</span></td><td>Mały ZUS</td></tr>
+              <tr><td>Od miesiąca 31</td><td>~1 600 zł/mies.</td><td>Pełny ZUS</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Warunek:</strong> Nie prowadziłeś JDG w ostatnich <span class="highlight">60 miesiącach</span> (5 lat). Przez pierwsze 2,5 roku koszty ZUS są minimalne — to najlepszy moment na start.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: SECTION — Podsumowanie ==================== -->
+      <section class="slide-section">
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Podsumowanie</h2>
+        <p class="sub">Zalety, wady i kluczowe wnioski z lekcji</p>
+      </section>
+
+      <!-- ==================== SLAJD 14: cards-2 — Zalety vs wady ==================== -->
+      <section>
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Zalety vs wady fakturowania z JDG</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Zalety</h3>
+              <ul>
+                <li><span class="highlight">Brak limitu kwotowego</span> — fakturuj bez ograniczeń</li>
+                <li>Ryczałt <span class="highlight">3–12%</span> zamiast 26,3% (CIT+PIT)</li>
+                <li>Faktura = koszt spółki — obniża CIT</li>
+                <li>Możliwy <span class="highlight-accent">IP BOX 5%</span> dla programistów</li>
+                <li>Ulgi na start ZUS — pierwsze 2,5 roku tanio</li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>Wady i ryzyka</h3>
+              <ul>
+                <li>Koszty drugiej firmy (ZUS + księgowość)</li>
+                <li>Usługi muszą być <strong>realne i rynkowe</strong></li>
+                <li>Wymaga pełnomocnika (art. 210 KSH)</li>
+                <li>VAT po 200k/240k przychodu</li>
+                <li>Usługi zarządcze <strong>wykluczone</strong> z ryczałtu</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Wniosek:</strong> Fakturowanie spółki z JDG to jedna z <span class="highlight">najskuteczniejszych metod</span> optymalizacji podatkowej — ale wymaga prawidłowej dokumentacji i realnych usług.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 06-zatrudnienie-prokurent-dywidenda ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Zatrudnienie, prokurent<br>i dywidenda</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Zatrudnienie ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Zatrudnienie w spółce</div>
+        <h2>Zatrudnienie w spółce</h2>
+        <p class="sub">Etat, zlecenie i magiczne ulgi zerujące podatek</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Standardowe zatrudnienie — tabela ==================== -->
+      <section>
+        <div class="pill">1 · Zatrudnienie w spółce</div>
+        <h2>Standardowe zatrudnienie</h2>
+        <p>Etat lub umowa zlecenie — klasyczna forma, ale <span class="highlight">najdroższa pod względem ZUS</span>.</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Składnik</th><th>Stawka</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>PIT (skala)</td><td><strong>12% / 32%</strong></td><td>Kwota wolna 30 000 zł</td></tr>
+              <tr><td>ZUS społeczny</td><td><strong>Pełne składki</strong></td><td>Emerytalna, rentowa, chorobowa</td></tr>
+              <tr><td>Składka zdrowotna</td><td><strong>9%</strong></td><td>Nieodliczalna od podatku</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p>Wynagrodzenie = <strong>koszt spółki</strong> (obniża CIT). Drogie, ale daje prawo do emerytury i świadczeń ZUS.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Student <26 — stats + accent-box ==================== -->
+      <section>
+        <div class="pill">1 · Zatrudnienie w spółce</div>
+        <h2>Student do 26 r.ż. na zleceniu</h2>
+        <p>Absolutny <span class="highlight">rekord optymalizacji</span> — zero obciążeń publicznoprawnych.</p>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">0%</div>
+              <div class="stat-label">PIT</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0%</div>
+              <div class="stat-label">ZUS społeczny</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0%</div>
+              <div class="stat-label">Składka zdrowotna</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">~115 528 zł</div>
+              <div class="stat-label">Roczny limit</div>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p>Spółka płaci <span class="highlight">3 000 zł</span> → student dostaje <span class="highlight">3 000 zł na rękę</span>. Idealne dla: dzieci, rodzeństwa, znajomych studentów.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: Inne ulgi — cards-3 ==================== -->
+      <section>
+        <div class="pill">1 · Zatrudnienie w spółce</div>
+        <h2>Inne ulgi zerujące PIT</h2>
+        <p>Trzy grupy osób, które mogą korzystać z <span class="highlight">0% PIT</span> do ~115 000 zł rocznie.</p>
+        <div class="content">
+          <div class="cards-3">
+            <div class="card-soft">
+              <h3>Osoba do 26 r.ż. (nie-student)</h3>
+              <p><strong>0% PIT</strong> dzięki uldze dla młodych + kwota wolna</p>
+              <p>ALE: <span class="highlight-accent">pełne składki ZUS</span> — bo brak statusu studenta</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Senior (K 60+ / M 65+)</h3>
+              <p><strong>0% PIT</strong> do ~115 000 zł</p>
+              <p>Warunek: <span class="highlight-accent">dobrowolna rezygnacja</span> z pobierania emerytury</p>
+              <p>ZUS: standardowe składki</p>
+            </div>
+            <div class="card-accent">
+              <h3>Rodzic 4+ dzieci</h3>
+              <p><strong>0% PIT</strong> do ~115 000 zł</p>
+              <p>Każdy z rodziców korzysta <span class="highlight">osobno</span> — razem do ~230 000 zł</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: Ostrzeżenia — split + checklist ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">1 · Zatrudnienie w spółce</div>
+          <h2>Warunki bezpieczeństwa</h2>
+          <p>Każda forma zatrudnienia musi spełniać wymogi formalne — inaczej urząd zakwestionuje koszty.</p>
+          <ul class="checklist">
+            <li>Praca <strong>faktycznie wykonywana</strong> — lista obecności, efekty, godziny</li>
+            <li>Wynagrodzenie na <strong>warunkach rynkowych</strong> — nie zawyżone sztucznie</li>
+            <li>Pełna <strong>dokumentacja</strong> jak dla każdego pracownika</li>
+            <li>Umowa sporządzona <strong>przed rozpoczęciem</strong> pracy</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Urząd Skarbowy weryfikuje nie papier, a rzeczywistość."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: SECTION — Prokurent ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Prokurent</div>
+        <h2>Wynagrodzenie prokurenta</h2>
+        <p class="sub">Szerokie pełnomocnictwo bez odpowiedzialności za długi</p>
+      </section>
+
+      <!-- ==================== SLAJD 7: Czym jest prokura — accent-box + cards ==================== -->
+      <section>
+        <div class="pill">2 · Prokurent</div>
+        <h2>Czym jest prokura?</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p><strong>Prokura</strong> to specjalne, szerokie pełnomocnictwo <span class="highlight-accent">wpisane do KRS</span>. Prokurent może zawierać umowy i negocjować w imieniu spółki — ale <strong>nie odpowiada za jej długi</strong>.</p>
+          </div>
+          <div class="cards-2" style="margin-top: 1em;">
+            <div class="card">
+              <h3>Kto powołuje?</h3>
+              <p><strong>Zarząd spółki</strong> podejmuje uchwałę o powołaniu prokurenta</p>
+            </div>
+            <div class="card">
+              <h3>Kto może być?</h3>
+              <p>Wspólnik może być prokurentem, ale <span class="highlight-accent">NIE jednocześnie</span> członkiem zarządu</p>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Kiedy użyć:</strong> Wspólnik nie chce być w zarządzie (boi się odpowiedzialności z art. 299 KSH), ale chce mieć wynagrodzenie ze spółki.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: Podatki prokurenta — tabela ==================== -->
+      <section>
+        <div class="pill">2 · Prokurent</div>
+        <h2>Podatki prokurenta</h2>
+        <p>Opodatkowanie <span class="highlight">identyczne jak wynagrodzenie zarządu</span> z powołania.</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Składnik</th><th>Stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>PIT (skala)</td><td><strong>12% / 32%</strong> + kwota wolna 30 000 zł</td></tr>
+              <tr><td>Składka zdrowotna</td><td><strong>9%</strong></td></tr>
+              <tr><td>ZUS społeczny</td><td><span class="highlight">BRAK</span></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Uwaga:</strong> Prokurent <span class="highlight-accent">sam rozlicza PIT</span> — spółka nie potrąca zaliczek (w przeciwieństwie do zarządu). Ulga zerowy PIT dla osób do 26 r.ż. <strong>NIE dotyczy</strong> prokurenta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: Zarząd vs Prokurent — vs-container ==================== -->
+      <section>
+        <div class="pill">2 · Prokurent</div>
+        <h2>Zarząd vs Prokurent</h2>
+        <div class="content">
+          <div class="vs-container">
+            <div class="card-soft">
+              <h3>Zarząd</h3>
+              <ul>
+                <li>Spółka potrąca PIT</li>
+                <li><strong>Odpowiada za długi</strong> (art. 299 KSH)</li>
+                <li>Pełna władza nad spółką</li>
+                <li>Ulga zerowy PIT &lt;26: NIE</li>
+              </ul>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="card-accent">
+              <h3>Prokurent</h3>
+              <ul>
+                <li>Sam rozlicza PIT</li>
+                <li><span class="highlight">NIE odpowiada za długi</span></li>
+                <li>Szerokie pełnomocnictwo, ale bez zarządzania</li>
+                <li>Ulga zerowy PIT &lt;26: NIE</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: art. 176 KSH — accent-box + checklist ==================== -->
+      <section>
+        <div class="pill">2 · Prokurent</div>
+        <h2>Świadczenia wspólników — art. 176 KSH</h2>
+        <p>Alternatywny strumień wynagrodzenia dla wspólnika, który <span class="highlight-accent">nie jest w zarządzie</span>.</p>
+        <div class="content">
+          <div class="accent-box">
+            <p>Umowa spółki może zobowiązać wspólników do <strong>powtarzających się świadczeń niepieniężnych</strong> (np. usługi doradcze, IT). Opodatkowanie analogiczne: <span class="highlight">12–32% PIT + 9% zdrowotna, brak ZUS</span>.</p>
+          </div>
+          <ul class="checklist" style="margin-top: 0.8em;">
+            <li>Wymaga <strong>zapisu w umowie spółki</strong> (forma notarialna)</li>
+            <li>Wynagrodzenie musi być <strong>rynkowe</strong></li>
+            <li><strong>Nie daje prawa do emerytury</strong>, ale daje NFZ</li>
+            <li>Można łączyć z wynagrodzeniem z powołania (dodatkowy strumień)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: SECTION — Dywidenda ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Dywidenda</div>
+        <h2>Dywidenda — ostatnia opcja</h2>
+        <p class="sub">Jedyna metoda z podwójnym opodatkowaniem</p>
+      </section>
+
+      <!-- ==================== SLAJD 12: Dlaczego najdroższa — example-box ==================== -->
+      <section>
+        <div class="pill">3 · Dywidenda</div>
+        <h2>Dlaczego dywidenda jest najdroższa?</h2>
+        <p><span class="highlight-accent">Podwójne opodatkowanie:</span> najpierw CIT w spółce, potem PIT 19% u wspólnika.</p>
+        <div class="content">
+          <div class="example-box">Dochód spółki:                   1 000 000 zł
+CIT 9% (mały podatnik):            −90 000 zł
+Zysk netto:                        910 000 zł
+PIT 19% od dywidendy:             −172 900 zł
+─────────────────────────────────────────────
+Do kieszeni:                       737 100 zł
+Łączny podatek:                    262 900 zł
+<strong>Efektywna stawka:                    <span class="highlight">26,29%</span></strong></div>
+          <div class="accent-box-accent" style="margin-top: 0.8em;">
+            <p>Przy CIT <strong>19%</strong> (duży podatnik) efektywna stawka rośnie do <span class="highlight-accent">34,39%</span>. Dywidenda <strong>NIE jest kosztem spółki</strong> — nie obniża CIT.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Efektywna stawka — stats + cards ==================== -->
+      <section>
+        <div class="pill">3 · Dywidenda</div>
+        <h2>Efektywna stawka dywidendy</h2>
+        <p>Porównanie obciążenia w zależności od stawki CIT.</p>
+        <div class="content">
+          <div class="stats" style="margin-top: 1em;">
+            <div class="stat">
+              <div class="stat-number">26,29%</div>
+              <div class="stat-label">CIT 9% (mały podatnik)</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">34,39%</div>
+              <div class="stat-label">CIT 19% (duży podatnik)</div>
+            </div>
+          </div>
+          <div class="cards-2" style="margin-top: 1.2em;">
+            <div class="card-secondary">
+              <h3>Warunki wypłaty</h3>
+              <ul>
+                <li>Spółka musi mieć <strong>zysk</strong> (zatwierdzone sprawozdanie)</li>
+                <li>Uchwała zgromadzenia wspólników</li>
+                <li>Proporcjonalnie do udziałów</li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>Kiedy ma sens?</h3>
+              <ul>
+                <li>Gdy wyczerpano <strong>wszystkie inne metody</strong></li>
+                <li>Przy dużych zyskach → rozważ <span class="highlight-accent">fundację rodzinną</span></li>
+                <li>Lub <span class="highlight-accent">spółkę komandytową</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: Zaliczka na dywidendę — steps ==================== -->
+      <section>
+        <div class="pill">3 · Dywidenda</div>
+        <h2>Zaliczka na dywidendę</h2>
+        <p>Art. 195 §1 KSH — możliwość wcześniejszej wypłaty części zysku.</p>
+        <div class="content">
+          <ol class="steps">
+            <li><strong>Nie</strong> w pierwszym roku obrotowym — dopiero od 2. roku</li>
+            <li>W poprzednim roku musi być <strong>wykazany zysk</strong></li>
+            <li>Umowa spółki musi <strong>przewidywać zaliczkę</strong> (S24 ma taką opcję)</li>
+            <li>Maksymalnie <span class="highlight">50% bieżącego zysku</span></li>
+          </ol>
+          <div class="accent-box-secondary" style="margin-top: 0.6em;">
+            <p><strong>Strata na koniec roku?</strong> Obowiązek zwrotu zaliczki <span class="highlight-accent">w całości</span>.<br>
+            <strong>Zysk mniejszy niż zaliczka?</strong> Zwrot <span class="highlight-accent">proporcjonalny</span> (nadwyżki).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 15: PODSUMOWANIE — tabela ==================== -->
+      <section>
+        <div class="pill">Podsumowanie</div>
+        <h2>Podsumowanie lekcji</h2>
+        <p>Przegląd wszystkich metod wyciągania pieniędzy ze spółki omówionych w tej lekcji.</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Metoda</th><th>Najlepsze użycie</th><th>Efektywna stawka</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Student &lt;26 zlecenie</strong></td><td>Zatrudnij kogoś młodego</td><td><span class="highlight">0%</span></td></tr>
+              <tr><td><strong>Prokurent</strong></td><td>Wspólnik bez odpowiedzialności</td><td>12–32% + 9% zdr.</td></tr>
+              <tr><td><strong>Art. 176 KSH</strong></td><td>Wspólnik poza zarządem</td><td>12–32% + 9% zdr.</td></tr>
+              <tr><td><strong>Etat / zlecenie</strong></td><td>Prawo do emerytury</td><td>12–32% + ZUS</td></tr>
+              <tr><td><strong>Dywidenda</strong></td><td>Ostateczność</td><td><span class="highlight-accent">26–34%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Zasada:</strong> Dywidenda dopiero gdy wyczerpiesz <span class="highlight">wszystkie inne metody</span>. Każda złotówka wypłacona inaczej = mniejszy podatek.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 07-ulga-br ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Ulga B+R i inne ulgi podatkowe</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Ulga B+R ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Ulga B+R</div>
+        <h2>Ulga B+R — kluczowa dla SaaS</h2>
+        <p class="sub">Najskuteczniejszy sposób na obniżenie CIT w spółce technologicznej</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Jak działa (accent-box + cards) ==================== -->
+      <section>
+        <div class="pill">1 · Ulga B+R</div>
+        <h2>Jak działa ulga B+R?</h2>
+        <div class="content">
+          <div class="accent-box">
+            <p><strong>Zasada podwójnego odliczenia:</strong> Koszty pracy nad rozwojem produktu odliczasz <span class="highlight">DWA razy</span> od podstawy opodatkowania.</p>
+          </div>
+          <div class="cards-2" style="margin-top: 1em;">
+            <div class="card-soft">
+              <h3>Pierwsze odliczenie</h3>
+              <p>Normalny koszt spółki — obniża zysk, a więc mniej CIT</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Drugie odliczenie (ulga B+R)</h3>
+              <p>Dodatkowe <span class="highlight">100–150%</span> kosztów kwalifikowanych odliczone od podstawy opodatkowania</p>
+            </div>
+          </div>
+          <div class="accent-box-accent" style="margin-top: 0.8em;">
+            <p><strong>Efekt:</strong> Płacisz <span class="highlight-accent">znacznie mniej CIT</span> niż bez ulgi. Możesz nawet wyzerować podatek do zera.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Stawki (table) ==================== -->
+      <section>
+        <div class="pill">1 · Ulga B+R</div>
+        <h2>Stawki dodatkowego odliczenia</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>Typ podatnika</th>
+                <th>Dodatkowe odliczenie</th>
+                <th>Uwagi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mały podatnik</strong></td>
+                <td><span class="highlight">150%</span></td>
+                <td>Do 2 mln EUR przychodu — większość SaaS-ów!</td>
+              </tr>
+              <tr>
+                <td><strong>Centrum badawczo-rozwojowe</strong></td>
+                <td><span class="highlight">150%</span></td>
+                <td>Specjalny status — wymaga wniosku</td>
+              </tr>
+              <tr>
+                <td><strong>Duży podatnik</strong></td>
+                <td>100%</td>
+                <td>Powyżej 2 mln EUR przychodu</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Typowy SaaS</strong> to mały podatnik — kwalifikujesz się na <span class="highlight">150%</span> dodatkowego odliczenia.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: Przykład liczbowy (vs-container) ==================== -->
+      <section>
+        <div class="pill">1 · Ulga B+R</div>
+        <h2>Przykład: bez ulgi vs z ulgą</h2>
+        <p class="sub">Przychód spółki: 500 000 zł · Koszty kwalifikowane B+R: 100 000 zł</p>
+        <div class="content">
+          <div class="vs-container">
+            <div class="card">
+              <h3>BEZ ulgi B+R</h3>
+              <div class="example-box">Przychód − koszty = <strong>400 000 zł</strong>
+CIT 9% = <span class="highlight">36 000 zł</span></div>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="card-soft">
+              <h3>Z ulgą B+R</h3>
+              <div class="example-box">Przychód − koszty = 400 000 zł
+Dodatkowe odliczenie (150%) = −150 000 zł
+Podstawa CIT = 250 000 zł
+CIT 9% = <span class="highlight">22 500 zł</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: Oszczędność (stats) ==================== -->
+      <section>
+        <div class="pill">1 · Ulga B+R</div>
+        <h2>Ile oszczędzasz dzięki uldze B+R?</h2>
+        <div class="content">
+          <div class="stats" style="margin-top: 1.5em;">
+            <div class="stat">
+              <div class="stat-number">13 500 zł</div>
+              <div class="stat-label">Oszczędność CIT rocznie<br>(przy 100 tys. kosztów B+R)</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">150%</div>
+              <div class="stat-label">Dodatkowe odliczenie<br>dla małego podatnika</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0 zł</div>
+              <div class="stat-label">Możliwy CIT do zapłaty<br>przy pełnym wykorzystaniu</div>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 1.5em;">
+            <p><strong>Im więcej kosztów B+R</strong>, tym większa oszczędność. Przy kosztach B+R równych dochodowi — <span class="highlight">CIT spada do zera</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: Student + B+R (split) ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">1 · Ulga B+R</div>
+          <h2>Podwójna korzyść: student + B+R</h2>
+          <p>Zatrudniasz <span class="highlight">studenta &lt;26 lat</span> na umowie zleceniu za 5 000 zł/mies.</p>
+          <div class="example-box">Student dostaje: <strong>5 000 zł na rękę</strong>
+  PIT: 0 zł (ulga dla młodych)
+  ZUS: 0 zł (student na zleceniu)
+
+Spółka: koszt 60 000 zł/rok
+  + odliczenie B+R 150%: 90 000 zł
+  Łączne odliczenie: 150 000 zł
+  <strong>Oszczędność CIT: <span class="highlight">13 500 zł/rok</span></strong></div>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">Student nic nie płaci, a spółka oszczędza 13 500 zł rocznie na CIT</div>
+            <div class="quote-author">— optymalne zatrudnienie w SaaS</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: SECTION — Co się kwalifikuje ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Koszty kwalifikowane</div>
+        <h2>Co się kwalifikuje jako B+R?</h2>
+        <p class="sub">Innowacja w skali firmy, nie świata!</p>
+      </section>
+
+      <!-- ==================== SLAJD 8: Co to B+R (accent-box + checklist) ==================== -->
+      <section>
+        <div class="pill">2 · Koszty kwalifikowane</div>
+        <h2>B+R to innowacja w skali FIRMY</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p><strong>Nie musisz wynajdywać czegoś nowego dla świata.</strong> Wystarczy, że jest nowe <span class="highlight-accent">dla Twojej spółki</span>.</p>
+          </div>
+          <ul class="checklist" style="margin-top: 0.8em;">
+            <li>Tworzenie <strong>nowego produktu</strong> (nowego dla Twojej spółki)</li>
+            <li><strong>Poprawka</strong> istniejącego produktu</li>
+            <li>Nowe <strong>funkcje</strong> w produkcie</li>
+            <li><strong>Optymalizacja</strong> procesu wytwarzania</li>
+            <li>Praca która się <strong>nie udała</strong> — sam proces badawczy się kwalifikuje!</li>
+          </ul>
+          <div class="accent-box" style="margin-top: 0.6em;">
+            <p><strong>Dla SaaS:</strong> praktycznie <span class="highlight">cała praca developerska</span> to B+R — nowe moduły, refactoring, optymalizacja, eksperymenty z technologiami, testowanie rozwiązań.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: Koszty kwalifikowane (checklist) ==================== -->
+      <section>
+        <div class="pill">2 · Koszty kwalifikowane</div>
+        <h2>Co możesz odliczyć?</h2>
+        <div class="content">
+          <ul class="checklist">
+            <li><strong>Wynagrodzenia</strong> pracowników B+R (w części poświęconej na B+R) + składki</li>
+            <li><strong>Wynagrodzenia</strong> z umów zlecenia / o dzieło (w części B+R) + składki</li>
+            <li><strong>Sprzęt specjalistyczny</strong> (nie środek trwały) i materiały związane z B+R</li>
+            <li><strong>Ekspertyzy i usługi doradcze</strong> od uczelni i instytutów naukowych</li>
+            <li><strong>Odpłatne korzystanie z aparatury</strong> (jeśli NIE od podmiotu powiązanego)</li>
+            <li>Koszty <strong>patentów i praw ochronnych</strong></li>
+            <li><strong>Amortyzacja</strong> środków trwałych używanych w B+R (bez samochodów i budynków)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: Ograniczenia (cards-2) ==================== -->
+      <section>
+        <div class="pill">2 · Koszty kwalifikowane</div>
+        <h2>Na co uważać?</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Co MOŻNA</h3>
+              <ul>
+                <li>Wynagrodzenia za prace B+R (UoP, zlecenie, dzieło)</li>
+                <li>Sprzęt i materiały badawcze</li>
+                <li>Usługi uczelni i instytutów</li>
+                <li>Amortyzacja sprzętu B+R</li>
+                <li>Patenty i prawa ochronne</li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>Czego NIE MOŻNA</h3>
+              <ul>
+                <li>Usługi od <strong>podmiotu powiązanego</strong> (np. Twoja JDG)</li>
+                <li>Brak <strong>odrębnej ewidencji</strong> kosztów B+R — poproś księgową!</li>
+                <li>Odliczenie powyżej <strong>osiągniętego dochodu</strong> (nie zejdziesz poniżej 0)</li>
+                <li>Amortyzacja <strong>samochodów i budynków</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Podstawy prawne:</strong> art. 18d ust. 2, art. 4a pkt 26 ustawy o CIT</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: SECTION — Inne ulgi ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Inne ulgi</div>
+        <h2>Inne ulgi i podsumowanie</h2>
+        <p class="sub">Od 2022 r. dostępnych jest kilka nowych ulg podatkowych</p>
+      </section>
+
+      <!-- ==================== SLAJD 12: Inne ulgi od 2022 (table) ==================== -->
+      <section>
+        <div class="pill">3 · Inne ulgi</div>
+        <h2>Nowe ulgi od 2022 r.</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>Ulga</th>
+                <th>Co obejmuje</th>
+                <th>Kiedy przydatna</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Na automatyzację</strong></td>
+                <td>Roboty, maszyny, AI</td>
+                <td>Automatyzacja procesów</td>
+              </tr>
+              <tr>
+                <td><strong>Na innowacyjnych pracowników</strong></td>
+                <td>Wynagrodzenia B+R</td>
+                <td>Gdy brak dochodu na odliczenie B+R</td>
+              </tr>
+              <tr>
+                <td><strong>Na prototyp</strong></td>
+                <td>Koszty prototypu</td>
+                <td>Nowy produkt fizyczny</td>
+              </tr>
+              <tr>
+                <td><strong>Na ekspansję</strong></td>
+                <td>Targi, nowe rynki</td>
+                <td>Wchodzisz na nowy rynek</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p>W połączeniu z ulgą B+R mogą doprowadzić do <span class="highlight">całkowitego wyzerowania CIT</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Action items (steps) ==================== -->
+      <section>
+        <div class="pill">3 · Inne ulgi</div>
+        <h2>Action items dla SaaS</h2>
+        <div class="content">
+          <ol class="steps">
+            <li><strong>Poproś księgową o oddzielną ewidencję kosztów B+R</strong> — od pierwszego miesiąca działalności. Bez ewidencji nie ma ulgi!</li>
+            <li><strong>Dokumentuj czas pracy</strong> deweloperów nad nowymi funkcjami — prowadź kartę czasu pracy z podziałem na B+R i inne zadania</li>
+            <li><strong>Opisuj projekty B+R</strong> — co jest nowe, co badawcze, jaki cel innowacyjny. Pisemna dokumentacja jest kluczowa</li>
+            <li><strong>Przy rocznym rozliczeniu CIT</strong> — zastosuj ulgę B+R i uwzględnij dodatkowe odliczenie w zeznaniu CIT-8</li>
+          </ol>
+          <div class="accent-box-accent" style="margin-top: 0.8em;">
+            <p><strong>Zacznij od razu</strong> — im szybciej wdrożysz ewidencję, tym więcej oszczędzisz. Ulga działa <span class="highlight-accent">wstecz tylko w obrębie roku podatkowego</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: Kwota wolna (cards-2) ==================== -->
+      <section>
+        <div class="pill">3 · Inne ulgi</div>
+        <h2>Kwota wolna — przypomnienie</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-secondary">
+              <h3>30 000 zł rocznie</h3>
+              <p>Kwota wolna od podatku (od 2022 r.) dotyczy <strong>PIT na skali podatkowej</strong>:</p>
+              <ul>
+                <li>Pracownicy (UoP)</li>
+                <li>Umowy zlecenia</li>
+                <li>Umowy o dzieło</li>
+                <li>Wynagrodzenie zarządu</li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>NIE dotyczy</h3>
+              <p>Kwota wolna <strong>nie obejmuje</strong>:</p>
+              <ul>
+                <li>Spółki (CIT)</li>
+                <li>Ryczałtu</li>
+                <li>Podatku liniowego</li>
+              </ul>
+              <p style="margin-top: 0.5em;">Przysługuje raz — kumuluje się ze wszystkimi źródłami na skali.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 08-koszty-i-inwestowanie ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Co spółka może kupować<br>+ inwestowanie</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Koszty uzyskania przychodu ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Koszty uzyskania przychodu</div>
+        <h2>Koszty uzyskania przychodu</h2>
+        <p class="sub">Co spółka może wrzucić w koszty — i dlaczego więcej, niż myślisz</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Zasada ogólna ==================== -->
+      <section>
+        <div class="pill">1 · Koszty uzyskania przychodu</div>
+        <h2>Zasada ogólna — art. 15 ust. 1 CIT</h2>
+        <div class="content">
+          <div class="accent-box">
+            <p><strong>Kosztem uzyskania przychodu (KUP)</strong> jest WSZYSTKO poniesione w celu osiągnięcia przychodów lub zachowania źródła przychodów.</p>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p>Klucz: wystarczy wykazać <span class="highlight">JAKIKOLWIEK związek</span> z działalnością — nawet pośredni. Nie musi być bezpośredni przychód z danego wydatku.</p>
+          </div>
+          <div class="stats" style="margin-top: 1.2em;">
+            <div class="stat">
+              <div class="stat-number">KUP</div>
+              <div class="stat-label">= niższy CIT do zapłaty</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">9%</div>
+              <div class="stat-label">CIT małego podatnika</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">19%</div>
+              <div class="stat-label">CIT standardowy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Wydatki oczywiste ==================== -->
+      <section>
+        <div class="pill">1 · Koszty uzyskania przychodu</div>
+        <h2>Wydatki oczywiste dla SaaS</h2>
+        <p class="sub">Bez wątpliwości — kupuj przez spółkę</p>
+        <div class="content">
+          <ul class="checklist">
+            <li>Serwery, hosting, chmura (AWS, GCP, Azure)</li>
+            <li>Oprogramowanie, licencje, narzędzia deweloperskie</li>
+            <li>Komputery, monitory, telefony, tablety</li>
+            <li>Domeny, certyfikaty SSL</li>
+            <li>Marketing: reklamy Google/Meta, SEO, content</li>
+            <li>Wynagrodzenia pracowników i współpracowników</li>
+            <li>Biuro, meble, wyposażenie</li>
+            <li>Szkolenia pracowników (związane z pracą)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: Wydatki mniej oczywiste ==================== -->
+      <section>
+        <div class="pill">1 · Koszty uzyskania przychodu</div>
+        <h2>Wydatki mniej oczywiste — <span class="highlight">też KUP!</span></h2>
+        <p class="sub">Jeśli uzasadnisz związek z działalnością</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Wydatek</th><th>Uzasadnienie</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ekspres do kawy + kawa + ciastka</td><td>Biuro z pracownikami — komfort pracy</td></tr>
+              <tr><td>Konsola do gier (Xbox/PS)</td><td>Pokój relaksu / poczekalnia</td></tr>
+              <tr><td>Smart TV</td><td>Prezentacje, demo, monitoring dashboardów</td></tr>
+              <tr><td>Rower</td><td>Dojazd do biura/klientów, kurier</td></tr>
+              <tr><td>Dron</td><td>Zdjęcia/filmy marketingowe</td></tr>
+              <tr><td>Sprzęt sportowy</td><td>Integracja zespołu, zdrowie pracowników</td></tr>
+              <tr><td>Studia pracownika</td><td>Kierunek związany z pracą</td></tr>
+              <tr><td>Pies + karma</td><td>Ochrona posesji firmy</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: SECTION — Czego NIE wrzucisz ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Czego NIE wrzucisz w koszty</div>
+        <h2>Czego NIE wrzucisz w koszty</h2>
+        <p class="sub">Wydatki, które spółka może ponieść, ale nie obniżą CIT</p>
+      </section>
+
+      <!-- ==================== SLAJD 6: Koszty niepodatkowe — reprezentacja ==================== -->
+      <section>
+        <div class="pill">2 · Czego NIE wrzucisz w koszty</div>
+        <h2>Koszty <span class="highlight-accent">NIEPODATKOWE</span> — reprezentacja</h2>
+        <p class="sub">Wydatki o charakterze wystawnym lub okazałym</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Wydatek</th><th>Status</th><th>Powód</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Garnitur dla prezesa</td><td><span class="highlight-accent">NIE jest KUP</span></td><td>Reprezentacja</td></tr>
+              <tr><td>Luksusowy zegarek</td><td><span class="highlight-accent">NIE jest KUP</span></td><td>Reprezentacja</td></tr>
+              <tr><td>Perfumy</td><td><span class="highlight-accent">NIE jest KUP</span></td><td>Reprezentacja</td></tr>
+              <tr><td>Obiad z kontrahentem</td><td><span class="highlight-accent">NIE jest KUP</span></td><td>Reprezentacja</td></tr>
+              <tr><td><strong>Alkohol</strong></td><td><span class="highlight-accent">NIE jest KUP</span></td><td>Ustawa o wychowaniu w trzeźwości</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: Pułapka — szkolenie zarządu ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">2 · Czego NIE wrzucisz w koszty</div>
+          <h2>Pułapka: szkolenie członka zarządu</h2>
+          <div class="content">
+            <div class="accent-box" style="margin-top: 0.5em;">
+              <p>Szkolenie opłacone przez spółkę = <span class="highlight">KUP dla spółki</span></p>
+            </div>
+            <div class="accent-box-accent" style="margin-top: 0.8em;">
+              <p><strong>ALE:</strong> jednocześnie <span class="highlight-accent">przychód do opodatkowania</span> u członka zarządu (PIT)</p>
+            </div>
+            <div class="accent-box-secondary" style="margin-top: 0.8em;">
+              <p>Brak ZUS od szkolenia — to jedyna dobra wiadomość</p>
+            </div>
+          </div>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">Spółka odliczy koszt, ale członek zarządu zapłaci PIT od wartości szkolenia</div>
+            <div class="quote-author">— mechanizm podwójnego skutku</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: SECTION — Inwestowanie ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Inwestowanie</div>
+        <h2>Inwestowanie za pieniądze spółki</h2>
+        <p class="sub">Złoto, krypto, akcje — zasady i pułapki</p>
+      </section>
+
+      <!-- ==================== SLAJD 9: Złoto / kruszce ==================== -->
+      <section>
+        <div class="pill">3 · Inwestowanie</div>
+        <h2>Złoto i kruszce</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Aspekt</th><th>Zasada</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Czy można?</strong></td><td>Tak — sztabki, monety</td></tr>
+              <tr><td><strong>Koszt zakupu</strong></td><td>KUP, ale <span class="highlight">dopiero w roku sprzedaży</span></td></tr>
+              <tr><td><strong>Stawka CIT</strong></td><td>Zależy od statusu (9% lub 19%)</td></tr>
+              <tr><td><strong>VAT</strong></td><td>Zwolnione</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>UWAGA:</strong> Obrót ze sprzedaży złota <span class="highlight">wlicza się do limitu 2 mln EUR</span> — progu małego podatnika!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: Kryptowaluty ==================== -->
+      <section>
+        <div class="pill">3 · Inwestowanie</div>
+        <h2>Kryptowaluty — specyficzne zasady</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Aspekt</th><th>Zasada</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Stawka CIT</strong></td><td>Zawsze <span class="highlight">19%</span> — nawet mały podatnik na 9%!</td></tr>
+              <tr><td><strong>Kiedy przychód?</strong></td><td>Dopiero przy <span class="highlight">wyjściu na fiat</span> (PLN, EUR, USD)</td></tr>
+              <tr><td><strong>Wymiana krypto na krypto</strong></td><td>NIE jest przychodem</td></tr>
+              <tr><td><strong>Strata z krypto</strong></td><td>NIE rozliczysz ze stratą z działalności operacyjnej</td></tr>
+              <tr><td><strong>Koszty nabycia</strong></td><td>Brak przychodu w danym roku — przenoszą się dalej</td></tr>
+              <tr><td><strong>VAT</strong></td><td>Zwolnione</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box-accent" style="margin-top: 0.6em;">
+            <p><strong>Klient płaci krypto za SaaS?</strong> To przychód operacyjny (wartość faktury). Dochód z krypto dopiero przy przewalutowaniu na złotówki.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: Akcje, obligacje, ETF ==================== -->
+      <section>
+        <div class="pill">3 · Inwestowanie</div>
+        <h2>Akcje, obligacje, ETF</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Aspekt</th><th>Zasada</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Stawka CIT</strong></td><td>Zawsze <span class="highlight">19%</span> — odrębne źródło przychodów</td></tr>
+              <tr><td><strong>Księgowość</strong></td><td>Zbiorczo na podstawie wyciągów z rachunku maklerskiego</td></tr>
+              <tr><td><strong>Limit</strong></td><td>Obrót wlicza się do limitu <span class="highlight">2 mln EUR</span></td></tr>
+            </tbody>
+          </table>
+          <div class="cards-2" style="margin-top: 1em;">
+            <div class="card-soft">
+              <h3>Zaleta</h3>
+              <p>Prosta księgowość — wyciąg z domu maklerskiego wystarczy</p>
+            </div>
+            <div class="card-accent">
+              <h3>Ryzyko</h3>
+              <p>Duży obrót (nawet zyskowny) może wypchnąć Cię ponad limit małego podatnika</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: Ryzyko utraty małego podatnika ==================== -->
+      <section>
+        <div class="pill">3 · Inwestowanie</div>
+        <h2>Ryzyko utraty statusu <span class="highlight">małego podatnika</span></h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p>Kupowanie i sprzedawanie złota, krypto i akcji za pieniądze spółki <strong>wlicza się do limitu 2 mln EUR</strong> przychodu rocznie.</p>
+          </div>
+          <div class="vs-container" style="margin-top: 1em;">
+            <div class="card-soft" style="text-align: center; padding: 1.5em;">
+              <h3>Poniżej limitu</h3>
+              <p style="font-size: 0.7em;"><span class="stat-number" style="font-size: 2.5em;">9%</span></p>
+              <p style="font-size: 0.65em; color: var(--text-muted);">CIT od całej działalności</p>
+            </div>
+            <div class="vs-divider">VS</div>
+            <div class="card-accent" style="text-align: center; padding: 1.5em;">
+              <h3>Powyżej limitu</h3>
+              <p style="font-size: 0.7em;"><span class="stat-number" style="font-size: 2.5em;">19%</span></p>
+              <p style="font-size: 0.65em; color: var(--text-muted);">CIT od całej działalności</p>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Wniosek:</strong> Inwestowanie za pieniądze spółki — ostrożnie, <span class="highlight">pilnuj limitu 2 mln EUR</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: SECTION — Podsumowanie ==================== -->
+      <section class="slide-section">
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Podsumowanie</h2>
+        <p class="sub">Rekomendacje dla spółki SaaS</p>
+      </section>
+
+      <!-- ==================== SLAJD 14: Rekomendacje ==================== -->
+      <section>
+        <div class="pill">4 · Podsumowanie</div>
+        <h2>Rekomendacje dla SaaS</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Kategoria</th><th>Rekomendacja</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Serwery, narzędzia, sprzęt</strong></td><td><span class="highlight">Kupuj przez spółkę</span> — KUP</td></tr>
+              <tr><td><strong>Marketing</strong></td><td><span class="highlight">Kupuj przez spółkę</span> — KUP</td></tr>
+              <tr><td><strong>Kawa i ciastka do biura</strong></td><td><span class="highlight">Kupuj przez spółkę</span> — KUP</td></tr>
+              <tr><td><strong>Garnitur, zegarek</strong></td><td><span class="highlight-accent">Kupuj prywatnie</span> — nie jest KUP</td></tr>
+              <tr><td><strong>Inwestowanie (krypto, akcje)</strong></td><td><span class="highlight-accent">Ostrożnie</span> — pilnuj limitu 2 mln EUR</td></tr>
+            </tbody>
+          </table>
+          <div class="cards-2" style="margin-top: 0.8em;">
+            <div class="card-soft">
+              <h3>Zasada #1</h3>
+              <p>Każdy wydatek z <strong>jakimkolwiek związkiem</strong> z działalnością = KUP. Bądź kreatywny, ale miej uzasadnienie.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Zasada #2</h3>
+              <p>Inwestycje spółki = zawsze <strong>19% CIT</strong> i ryzyko utraty statusu małego podatnika. Licz obroty!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 09-zus-vat-samochod ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>ZUS, VAT i samochód w spółce</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — ZUS ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · ZUS w spółce z o.o.</div>
+        <h2>ZUS w spółce z o.o.</h2>
+        <p class="sub">Złota zasada: wieloosobowa = zero składek</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: ZŁOTA ZASADA — stats + cards ==================== -->
+      <section>
+        <div class="pill">1 · ZUS w spółce z o.o.</div>
+        <h2>Złota zasada ZUS</h2>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">0 zł</div>
+              <div class="stat-label">ZUS — wieloosobowa spółka</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">~1 600 zł</div>
+              <div class="stat-label">ZUS — jednoosobowa (jak JDG)</div>
+            </div>
+          </div>
+          <div class="cards-2" style="margin-top: 1.2em;">
+            <div class="card-soft">
+              <h3>Wieloosobowa (min. 2 wspólników)</h3>
+              <p><span class="highlight">ZERO ZUS</span> — wspólnik i zarząd nie płacą składek społecznych ani zdrowotnych z tytułu udziałów</p>
+            </div>
+            <div class="card">
+              <h3>Jednoosobowa (100% udziałów)</h3>
+              <p><span class="highlight-accent">Pełne składki ZUS</span> jak jednoosobowa działalność gospodarcza — społeczne + zdrowotne</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: ROZWIĄZANIE — accent-boxy ==================== -->
+      <section>
+        <div class="pill">1 · ZUS w spółce z o.o.</div>
+        <h2>Rozwiązanie: sprzedaj 20% udziałów</h2>
+        <div class="content">
+          <p>Sprzedaj udziały komuś z rodziny (mama, partner, brat). Spółka przestaje być jednoosobowa — <span class="highlight">ZUS odpada</span>.</p>
+          <div class="accent-box">
+            <p><strong>Mniejszościowy wspólnik:</strong> nie odpowiada za nic, jedyny obowiązek to 1 podpis rocznie (zatwierdzenie sprawozdania finansowego).</p>
+          </div>
+          <div class="accent-box-accent" style="margin-top: 0.6em;">
+            <p><strong>Uwaga — iluzoryczny wspólnik:</strong> Wspólnik z 1% udziałów może zostać zakwestionowany przez ZUS. Bezpieczne minimum to <span class="highlight-accent">10–20% udziałów</span>.</p>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.6em;">
+            <p><strong>Forma notarialna:</strong> W jednoosobowej sp. z o.o. wszystkie czynności prawne między jedynym wspólnikiem a spółką wymagają <span class="highlight">aktu notarialnego</span> (art. 210 §2 KSH). Bez niego — czynność nieważna.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: NFZ + EMERYTURA — table ==================== -->
+      <section>
+        <div class="pill">1 · ZUS w spółce z o.o.</div>
+        <h2>Najtańsze NFZ i prawo do emerytury</h2>
+        <div class="content">
+          <div class="accent-box" style="margin-bottom: 0.8em;">
+            <p><strong>Najtańsze NFZ:</strong> wynagrodzenie zarządu z powołania (nawet <span class="highlight">1 000 zł/mies.</span>) — składka zdrowotna zryczałtowana <span class="highlight">9%</span> = ok. <span class="highlight">90 zł/mies.</span> = pełne NFZ.</p>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Tytuł</th><th>Daje emeryturę?</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Wynagrodzenie z powołania</td><td><strong>NIE</strong></td><td>Tylko składka zdrowotna</td></tr>
+              <tr><td>Prokura</td><td><strong>NIE</strong></td><td>Bez składek społecznych</td></tr>
+              <tr><td>Umowa o pracę</td><td><span class="highlight">TAK</span></td><td>Pełne składki ZUS</td></tr>
+              <tr><td>Umowa zlecenie ze składkami</td><td><span class="highlight">TAK</span></td><td>Podlega ozusowaniu</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 0.6em;">Wymagany staż: <span class="highlight-accent">20 lat</span> (kobiety) / <span class="highlight-accent">25 lat</span> (mężczyźni) okresu składkowego.</p>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: SECTION — VAT ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · VAT</div>
+        <h2>VAT</h2>
+        <p class="sub">Kiedy musisz, kiedy warto, kiedy nie</p>
+      </section>
+
+      <!-- ==================== SLAJD 6: PRÓG ZWOLNIENIA — stats + cards ==================== -->
+      <section>
+        <div class="pill">2 · VAT</div>
+        <h2>Próg zwolnienia z VAT</h2>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">200 000 zł</div>
+              <div class="stat-label">Obecny próg obrotu/rok</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">240 000 zł</div>
+              <div class="stat-label">Nowy próg od 2026</div>
+            </div>
+          </div>
+          <div class="cards-2" style="margin-top: 1.2em;">
+            <div class="card">
+              <h3>Poniżej progu</h3>
+              <p>Nie musisz być VAT-owcem — możesz korzystać ze zwolnienia podmiotowego</p>
+            </div>
+            <div class="card-accent">
+              <h3>Powyżej progu</h3>
+              <p>Obowiązkowa rejestracja VAT — od transakcji, w której przekroczysz limit</p>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Uwaga:</strong> Niektóre usługi (doradcze, prawnicze) wymagają <span class="highlight">obowiązkowego VAT od początku</span>, niezależnie od obrotu. Sprawdź PKD z księgową.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: KIEDY WARTO — table ==================== -->
+      <section>
+        <div class="pill">2 · VAT</div>
+        <h2>Kiedy warto być VAT-owcem?</h2>
+        <p class="sub">Decyzja strategiczna — zależy od modelu biznesowego</p>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Sytuacja</th><th>Rekomendacja</th><th>Dlaczego</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Klienci = <strong>konsumenci</strong> (B2C)</td><td><span class="highlight-accent">NIE</span></td><td>Ceny wzrosną o 23%</td></tr>
+              <tr><td>Klienci = <strong>firmy</strong> (B2B)</td><td><span class="highlight">TAK</span></td><td>VAT neutralny dla firm</td></tr>
+              <tr><td>Duże zakupy z VAT-em</td><td><span class="highlight">TAK</span></td><td>Odliczysz VAT naliczony</td></tr>
+              <tr><td><strong>Eksport usług</strong> (SaaS zagraniczny)</td><td><span class="highlight">ZDECYDOWANIE TAK</span></td><td>Stawka 0% + zwrot krajowego VAT</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Trick — kilka spółek:</strong> Każda spółka ma osobny limit 200k/240k. Ale nie można sklonować tej samej działalności — organ zakwestionuje sztuczne dzielenie.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 8: SaaS — split view ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">2 · VAT</div>
+          <h2>VAT dla SaaS — rekomendacja</h2>
+          <p>Jeśli sprzedajesz SaaS firmom (B2B) — <span class="highlight">rejestruj się na VAT od razu</span>, nawet poniżej progu.</p>
+          <ul>
+            <li>VAT jest <strong>neutralny</strong> dla Twoich klientów (odliczą go)</li>
+            <li>Ty odliczasz VAT od <strong>serwerów, narzędzi, sprzętu</strong></li>
+            <li>Przy eksporcie (klienci zagraniczni) — stawka <span class="highlight">0%</span> + zwrot krajowego VAT</li>
+          </ul>
+          <div class="accent-box-secondary" style="margin-top: 0.6em;">
+            <p><strong>Najem nieruchomości:</strong> Przychody z najmu wliczają się do limitu VAT. Suma obrotu SaaS + czynsz > limit = obowiązek rejestracji.</p>
+          </div>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Dla SaaS B2B rejestracja na VAT to nie koszt — to przewaga."</div>
+            <div class="quote-author">— Bartosz Szaleniec</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: SECTION — SAMOCHÓD ==================== -->
+      <section class="slide-section">
+        <div class="pill">3 · Samochód w spółce</div>
+        <h2>Samochód w spółce</h2>
+        <p class="sub">Limity CIT, VAT i optymalizacja kosztów</p>
+      </section>
+
+      <!-- ==================== SLAJD 10: LIMITY CIT — table + example ==================== -->
+      <section>
+        <div class="pill">3 · Samochód w spółce</div>
+        <h2>Limity wartości samochodu (CIT)</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Typ pojazdu</th><th>Limit CIT</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Spalinowy</strong></td><td><span class="highlight">150 000 zł</span></td><td>Standardowy limit</td></tr>
+              <tr><td><strong>Elektryczny</strong></td><td><span class="highlight">225 000 zł</span></td><td>Podwyższony limit</td></tr>
+              <tr><td><strong>Ciężarowy / specjalny</strong></td><td><span class="highlight">Brak limitu</span></td><td>Pełne koszty</td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Brutto czy netto?</strong> Limit dotyczy kwoty <span class="highlight">brutto</span>, jeśli spółka nie odlicza VAT (cele mieszane = 50% VAT). Przy odliczeniu <span class="highlight">100% VAT</span> — limit od kwoty netto.</p>
+          </div>
+          <div class="example-box" style="margin-top: 0.6em;">Auto za 300 000 zł → 150k / 300k = <strong>50% amortyzacji / rat leasingowych</strong> w kosztach uzyskania przychodu.</div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: NABYCIE VS EKSPLOATACJA — vs-container ==================== -->
+      <section>
+        <div class="pill">3 · Samochód w spółce</div>
+        <h2>Koszty nabycia vs. eksploatacji</h2>
+        <p class="sub">To dwa osobne limity!</p>
+        <div class="content">
+          <div class="vs-container">
+            <div class="card-secondary">
+              <h3>Koszty nabycia</h3>
+              <p>Leasing, amortyzacja, zakup</p>
+              <p><span class="highlight-accent">Ograniczone limitem</span> 150k / 225k zł</p>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="card-soft">
+              <h3>Koszty eksploatacji</h3>
+              <p>Paliwo, naprawy, myjnia, parking, autostrady</p>
+              <p><span class="highlight">Bez limitu wartości</span> — zależy od sposobu użytkowania</p>
+            </div>
+          </div>
+          <table style="margin-top: 1em;">
+            <thead>
+              <tr><th>Użytkowanie</th><th>VAT od eksploatacji</th><th>CIT koszty eksploatacji</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Wyłącznie służbowo</strong></td><td><span class="highlight">100%</span></td><td><span class="highlight">100%</span></td></tr>
+              <tr><td><strong>Cele mieszane</strong> (domyślne)</td><td><span class="highlight-accent">50%</span></td><td><span class="highlight-accent">75%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: 100% VAT — checklist ==================== -->
+      <section>
+        <div class="pill">3 · Samochód w spółce</div>
+        <h2>100% VAT = wyłącznie służbowo</h2>
+        <p class="sub">Wymaga spełnienia łącznie trzech warunków</p>
+        <div class="content">
+          <ul class="checklist">
+            <li><strong>Ewidencja przebiegu</strong> — prowadzona kilometrówka dla każdej trasy służbowej</li>
+            <li><strong>Zgłoszenie VAT-26</strong> — formularz złożony do urzędu skarbowego</li>
+            <li><strong>GPS</strong> (rekomendowane) — jako dowód wyłącznego użytku służbowego</li>
+          </ul>
+          <div class="accent-box-accent" style="margin-top: 0.8em;">
+            <p><strong>W praktyce trudne do utrzymania.</strong> Nawet 95% służbowo / 5% prywatnie = cele mieszane = 50% VAT. Nie ma proporcji — albo wyłącznie służbowo, albo mieszane.</p>
+          </div>
+          <div class="cards-2" style="margin-top: 0.8em;">
+            <div class="card">
+              <h3>OC, NNW</h3>
+              <p>Zawsze <span class="highlight">100%</span> w kosztach uzyskania przychodu</p>
+            </div>
+            <div class="card">
+              <h3>AC, GAP</h3>
+              <p>Proporcjonalnie do limitu: <span class="highlight-accent">150k / wartość auta</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: WYNAJEM AUTA — cards-2 ==================== -->
+      <section>
+        <div class="pill">3 · Samochód w spółce</div>
+        <h2>Wynajem prywatnego auta spółce</h2>
+        <div class="content">
+          <p>Optymalizacja: wynajmujesz swoje prywatne auto własnej spółce.</p>
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Po stronie spółki</h3>
+              <p><span class="highlight">75%</span> czynszu najmu w kosztach uzyskania przychodu (cele mieszane)</p>
+              <p>Przy celach mieszanych <strong>nie trzeba</strong> prowadzić kilometrówki</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Po stronie właściciela</h3>
+              <p>Ryczałt <span class="highlight">8,5%</span> od czynszu (najem prywatny)</p>
+              <p><span class="highlight">Zero ZUS</span> — najem prywatny nie podlega składkom</p>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Przykład:</strong> Czynsz 2 000 zł/mies. — spółka odlicza 1 500 zł w KUP, właściciel płaci 170 zł podatku (8,5%). Efektywna korzyść: koszt w spółce + niski podatek po stronie osoby fizycznej.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: QUICK REFERENCE — ściągawka ==================== -->
+      <section>
+        <div class="pill">Podsumowanie</div>
+        <h2>Quick reference — ściągawka</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Temat</th><th>Kluczowa liczba</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ZUS — wieloosobowa spółka</td><td><span class="highlight">0 zł</span></td></tr>
+              <tr><td>ZUS — jednoosobowa spółka</td><td><span class="highlight-accent">~1 600 zł/mies.</span></td></tr>
+              <tr><td>Najtańsze NFZ (z powołania)</td><td><span class="highlight">90 zł/mies.</span></td></tr>
+              <tr><td>VAT — próg zwolnienia</td><td><span class="highlight">200k zł</span> (od 2026: 240k)</td></tr>
+              <tr><td>Samochód spalinowy — limit CIT</td><td><span class="highlight">150 000 zł</span></td></tr>
+              <tr><td>Cele mieszane — VAT od eksploatacji</td><td><span class="highlight-accent">50%</span></td></tr>
+              <tr><td>Cele mieszane — CIT eksploatacja</td><td><span class="highlight-accent">75%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 0.8em;">
+            <p><strong>Zapamiętaj:</strong> Wieloosobowa spółka = zero ZUS. Rejestruj VAT, jeśli B2B/SaaS. Samochód: domyślnie cele mieszane (50% VAT / 75% CIT).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 10-odpowiedzialnosc-i-strategia ========== -->
+<section class="slide-title">
+        <div class="pill">Sekrety Spółek</div>
+        <h1>Odpowiedzialność zarządu<br>+ strategia dla SaaS</h1>
+        <div class="byline">Kurs Sekrety Spółek — Bartosz Szaleniec, doradca podatkowy</div>
+      </section>
+
+      <!-- ==================== SLAJD 1: SECTION — Odpowiedzialność ==================== -->
+      <section class="slide-section">
+        <div class="pill">1 · Odpowiedzialność</div>
+        <h2>Kto za co odpowiada w spółce?</h2>
+        <p class="sub">Wspólnik a członek zarządu — fundamentalna różnica</p>
+      </section>
+
+      <!-- ==================== SLAJD 2: Wspólnik vs zarząd (cards-2) ==================== -->
+      <section>
+        <div class="pill">1 · Odpowiedzialność</div>
+        <h2>Wspólnik vs. członek zarządu</h2>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card-soft">
+              <h3>Wspólnik</h3>
+              <p><strong>Nie odpowiada</strong> za długi spółki prywatnym majątkiem.</p>
+              <p>Ryzykuje <span class="highlight">tylko wkład</span> wniesiony przy zakładaniu spółki. Nic więcej.</p>
+            </div>
+            <div class="card-accent">
+              <h3>Członek zarządu</h3>
+              <p><strong>Odpowiada warunkowo</strong> — prywatnym majątkiem, ale <span class="highlight-accent">tylko gdy</span>:</p>
+              <ul>
+                <li>Wierzyciel nie wyegzekwował długu od spółki</li>
+                <li><strong>I</strong> zarząd nie złożył wniosku o upadłość w terminie</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accent-box-secondary" style="margin-top: 1em;">
+            <p><strong>Art. 299 KSH</strong> — to kluczowy przepis regulujący odpowiedzialność członków zarządu sp. z o.o.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 3: Kiedy zarząd odpowiada (split) ==================== -->
+      <section class="slide-split">
+        <div class="split-text">
+          <div class="pill">1 · Odpowiedzialność</div>
+          <h2>Kiedy zarząd odpowiada<br>prywatnym majątkiem?</h2>
+          <p>Odpowiedzialność powstaje, gdy spełnione są <span class="highlight">oba warunki jednocześnie</span>:</p>
+          <ol class="steps">
+            <li>Spółka ma <strong>niezaspokojone zobowiązania</strong> — wierzyciel próbował wyegzekwować dług, ale bezskutecznie</li>
+            <li>Członek zarządu <strong>nie złożył</strong> wniosku o upadłość <strong>w ustawowym terminie</strong></li>
+          </ol>
+        </div>
+        <div class="split-media">
+          <div class="quote-block">
+            <div class="quote-text">„Wniosek o upadłość składa wyłącznie zarząd — nie wspólnik, nie prokurent."</div>
+            <div class="quote-author">Zgodnie z reprezentacją w KRS</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 4: Terminy (table) ==================== -->
+      <section>
+        <div class="pill">1 · Odpowiedzialność</div>
+        <h2>Terminy — kiedy składać wniosek o upadłość</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Przesłanka</th><th>Warunek</th><th>Termin na wniosek</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Płynnościowa</strong> <span style="color: var(--text-muted);">(częstsza)</span></td>
+                <td>Nie płacisz zobowiązań przez <span class="highlight">3 miesiące</span></td>
+                <td><span class="highlight">30 dni</span></td>
+              </tr>
+              <tr>
+                <td><strong>Majątkowa</strong></td>
+                <td>Zobowiązania > wartość <span class="highlight-accent">rynkowa</span> aktywów przez <span class="highlight">24 miesiące</span></td>
+                <td><span class="highlight">30 dni</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="accent-box" style="margin-top: 1em;">
+            <p><strong>Uwaga:</strong> Liczy się <span class="highlight">wartość rynkowa</span>, nie bilansowa. Nieruchomość kupiona za 500 tys. zł może być warta 1 mln zł rynkowo — i to ta wyższa kwota się liczy.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 5: Kluczowa ochrona (accent-box-secondary) ==================== -->
+      <section>
+        <div class="pill">1 · Odpowiedzialność</div>
+        <h2>Kluczowa ochrona: sam wniosek chroni!</h2>
+        <div class="content">
+          <div class="accent-box-secondary">
+            <p style="font-size: 0.82em; line-height: 1.7;"><strong>Sam wniosek o upadłość — nawet oddalony przez sąd — CHRONI członka zarządu.</strong></p>
+            <p style="margin-top: 0.5em;">Liczy się <span class="highlight">fakt złożenia w terminie</span>, nie ogłoszenie upadłości. Sąd może oddalić wniosek (bo np. spółki nie stać na postępowanie), ale Twój majątek prywatny jest bezpieczny.</p>
+          </div>
+          <div class="accent-box-accent" style="margin-top: 1em;">
+            <p><strong>Reprezentacja łączna?</strong> Jeśli KRS wymaga reprezentacji łącznej — wniosek o upadłość potrzebuje dwóch podpisów.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 6: Przedawnienie (stats) ==================== -->
+      <section>
+        <div class="pill">1 · Odpowiedzialność</div>
+        <h2>Przedawnienie odpowiedzialności</h2>
+        <p class="sub">Od zakończenia pełnienia funkcji w zarządzie</p>
+        <div class="content">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">3 lata</div>
+              <div class="stat-label">Długi cywilne</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">5 lat</div>
+              <div class="stat-label">Zobowiązania podatkowe</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">30 dni</div>
+              <div class="stat-label">Termin na wniosek o upadłość</div>
+            </div>
+          </div>
+          <div class="accent-box" style="margin-top: 1.5em;">
+            <p><strong>Wniosek składa TYLKO zarząd</strong> — nie wspólnik, nie prokurent. Niezłożenie w terminie = osobista odpowiedzialność członka zarządu.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 7: SECTION — Strategia ==================== -->
+      <section class="slide-section">
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Plan działania — od startu do skali</h2>
+        <p class="sub">Optymalna struktura i metody wypłaty na każdym etapie</p>
+      </section>
+
+      <!-- ==================== SLAJD 8: Struktura spółki (accent-box + cards) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Struktura spółki — wieloosobowa</h2>
+        <div class="content">
+          <div class="accent-box">
+            <p style="font-size: 0.82em; line-height: 1.7;"><strong>Wieloosobowa sp. z o.o.</strong> — minimum 2 wspólników (np. 80/20 z kimś z rodziny)</p>
+          </div>
+          <div class="cards-2" style="margin-top: 1em;">
+            <div class="card-soft">
+              <h3>Zero ZUS za wspólników</h3>
+              <p>Przy wieloosobowej spółce żaden ze wspólników nie płaci składek ZUS z samego tytułu bycia wspólnikiem.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>CIT 9% — mały podatnik</h3>
+              <p>Status małego podatnika z preferencyjną stawką <span class="highlight">9% CIT</span>, jeśli przychody poniżej <span class="highlight">2 mln EUR</span> rocznie.</p>
+            </div>
+          </div>
+          <div class="accent-box-accent" style="margin-top: 1em;">
+            <p><strong>Dlaczego nie jednoosobowa?</strong> Jedyny wspólnik sp. z o.o. płaci pełny ZUS (~1 600 zł/mies.) — wieloosobowa eliminuje ten koszt.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 9: Etap 1 — Start (table) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Etap 1: Start — 0–50 tys. zł/rok</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Metoda</th><th>Kwota/mies.</th><th>Podatek</th><th>Po co</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Wynagrodzenie z powołania</strong></td>
+                <td>3–5 tys. zł</td>
+                <td>12% + 9% zdr.</td>
+                <td>NFZ + dochód</td>
+              </tr>
+              <tr>
+                <td><strong>Umowa o dzieło</strong> <span style="color: var(--text-muted);">(prawa autorskie)</span></td>
+                <td>2–5 tys. zł</td>
+                <td><span class="highlight">~3–4,5%</span></td>
+                <td>Kod, design</td>
+              </tr>
+              <tr>
+                <td><strong>Wynajem ruchomości</strong></td>
+                <td>500–1 000 zł</td>
+                <td>8,5%</td>
+                <td>Laptop, telefon</td>
+              </tr>
+              <tr>
+                <td><strong>Ulga B+R</strong></td>
+                <td>—</td>
+                <td><span class="highlight-accent">Obniża CIT</span></td>
+                <td>Od 1. miesiąca!</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="accent-box-secondary" style="margin-top: 0.8em;">
+            <p><strong>Priorytet:</strong> Poproś księgową o <span class="highlight">ewidencję B+R od razu</span> — to jednorazowy setup, który zwraca się wielokrotnie.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 10: Etap 2 — Wzrost (checklist + cards) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Etap 2: Wzrost — 50–200 tys. zł/rok</h2>
+        <p class="sub">Dodaj do metod z Etapu 1</p>
+        <div class="content">
+          <ul class="checklist">
+            <li><strong>Wynajem nieruchomości</strong> (pokój jako biuro) — ryczałt <span class="highlight">8,5%</span></li>
+            <li><strong>Student &lt;26 lat na zleceniu</strong> — <span class="highlight">0% podatku, 0% ZUS</span> (jeśli masz kogoś młodego)</li>
+            <li><strong>Zwiększ wynagrodzenie z powołania</strong> — ale nie powyżej <span class="highlight">120 tys. zł/rok</span> (I próg PIT)</li>
+          </ul>
+          <div class="cards-2" style="margin-top: 1em;">
+            <div class="card">
+              <h3>Dlaczego 120 tys. zł limit?</h3>
+              <p>Powyżej I progu PIT stawka rośnie do <span class="highlight-accent">32%</span> — wynagrodzenie z powołania staje się drogie. Lepiej przesunąć nadwyżkę na inne metody.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Student na zleceniu</h3>
+              <p>Najbardziej efektywna forma wypłaty w polskim systemie — <span class="highlight">zero danin</span>. Idealne na proste zadania w SaaS.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 11: Etap 3 — Skala (checklist + accent-box) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Etap 3: Skala — 200 tys.–1 mln zł/rok</h2>
+        <p class="sub">Dodaj kolejne narzędzia</p>
+        <div class="content">
+          <ul class="checklist">
+            <li><strong>JDG na ryczałcie</strong> — fakturowanie spółki za usługi (brak limitu kwotowego)</li>
+            <li><strong>IP BOX na JDG</strong> — <span class="highlight">5% PIT</span> przy prawach autorskich do programu</li>
+            <li><strong>Rejestracja VAT</strong> — szczególnie przy klientach B2B / eksport</li>
+          </ul>
+          <div class="accent-box" style="margin-top: 1em;">
+            <p><strong>Próg VAT:</strong> Obowiązkowa rejestracja przy przekroczeniu <span class="highlight">200 tys. zł</span> obrotu (od 2026: <span class="highlight">240 tys. zł</span>). Ale przy B2B/eksporcie warto zarejestrować się wcześniej — odzyskujesz VAT z faktur zakupowych.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 12: Etap 4 — Duży biznes (accent-box + cards-3) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Etap 4: Duży biznes — powyżej 1 mln zł/rok</h2>
+        <div class="content">
+          <div class="accent-box-accent">
+            <p style="font-size: 0.82em; line-height: 1.7;"><strong>Konsultacja z doradcą podatkowym</strong> — przy tej skali indywidualna analiza jest konieczna. Stawka za doradcę zwróci się wielokrotnie.</p>
+          </div>
+          <div class="cards-3" style="margin-top: 1em;">
+            <div class="card">
+              <h3>Fundacja rodzinna</h3>
+              <p>Akumulacja zysków bez bieżącego opodatkowania. Idealna do budowania majątku długoterminowo.</p>
+            </div>
+            <div class="card-soft">
+              <h3>Spółka komandytowa</h3>
+              <p>Elastyczna struktura z ograniczoną odpowiedzialnością komandytariusza i optymalizacją przepływów.</p>
+            </div>
+            <div class="card-secondary">
+              <h3>Holding</h3>
+              <p>Optymalizacja struktury kapitałowej — dywidendy między spółkami bez dodatkowego podatku.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 13: Checklist bezpieczeństwa (cards-2) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Checklist bezpieczeństwa</h2>
+        <p class="sub">Pilnuj tych punktów od pierwszego dnia</p>
+        <div class="content">
+          <div class="cards-2">
+            <div class="card">
+              <h3>Struktura i dokumentacja</h3>
+              <ul class="checklist">
+                <li><strong>Wieloosobowa spółka</strong> — min. 2 wspólników (10–20% drugi)</li>
+                <li><strong>Art. 210 KSH</strong> — umowy z zarządem podpisuje pełnomocnik</li>
+                <li><strong>Dokumentacja dzieła</strong> — namacalne rezultaty, protokoły odbioru</li>
+                <li><strong>Ewidencja B+R</strong> — od pierwszego miesiąca</li>
+              </ul>
+            </div>
+            <div class="card-accent">
+              <h3>Ceny i płynność</h3>
+              <ul class="checklist">
+                <li><strong>Ceny transferowe</strong> — transakcje wspólnik-spółka na warunkach rynkowych</li>
+                <li><strong>Rynkowość najmu</strong> — czynsz odpowiedni do wartości rzeczy</li>
+                <li><strong>Wniosek o upadłość</strong> — pilnuj płynności (30 dni od przesłanki!)</li>
+                <li><strong>VAT</strong> — rozważ rejestrację przy B2B / eksporcie</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLAJD 14: Ściągawka (table) ==================== -->
+      <section>
+        <div class="pill">2 · Strategia dla SaaS</div>
+        <h2>Ściągawka — kluczowe progi i liczby</h2>
+        <div class="content">
+          <table>
+            <thead>
+              <tr><th>Parametr</th><th>Wartość</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kwota wolna PIT</td><td><span class="highlight">30 000 zł</span>/rok</td></tr>
+              <tr><td>I próg PIT</td><td><span class="highlight">120 000 zł</span>/rok</td></tr>
+              <tr><td>CIT mały podatnik</td><td><span class="highlight">9%</span> (do 2 mln EUR przychodu)</td></tr>
+              <tr><td>Ryczałt najem (do 100 tys.)</td><td><span class="highlight">8,5%</span></td></tr>
+              <tr><td>50% koszty (dzieło z prawami)</td><td>Dochód = <span class="highlight-accent">połowa</span> wynagrodzenia</td></tr>
+              <tr><td>Próg VAT</td><td><span class="highlight">200 000 zł</span> (od 2026: 240 000 zł)</td></tr>
+              <tr><td>Limit samochodu CIT</td><td><span class="highlight">150 000 zł</span> (spalinowy)</td></tr>
+              <tr><td>Wniosek o upadłość</td><td><span class="highlight">30 dni</span> od przesłanki</td></tr>
+              <tr><td>Zaliczka na dywidendę</td><td>Max <span class="highlight-accent">50% zysku</span>, od 2. roku</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      width: 1920,
+      height: 1080,
+      margin: 0,
+      transition: 'slide',
+      center: true
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'd' || e.key === 'D') {
+        document.body.classList.toggle('debug-mode');
+      }
+    });
+  </script>
+</body>
+</html>
